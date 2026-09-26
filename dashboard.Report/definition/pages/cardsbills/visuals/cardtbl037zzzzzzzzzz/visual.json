@@ -1,0 +1,149 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "cardtbl037zzzzzzzzzz",
+  "position": {
+    "x": 280,
+    "y": 180,
+    "z": 37,
+    "height": 420,
+    "width": 960,
+    "tabOrder": 37
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_card"
+                    }
+                  },
+                  "Property": "card_name"
+                }
+              },
+              "queryRef": "dim_card.card_name",
+              "nativeQueryRef": "card_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_card"
+                    }
+                  },
+                  "Property": "issuer"
+                }
+              },
+              "queryRef": "dim_card.issuer",
+              "nativeQueryRef": "issuer",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "Total Credit Limit"
+                }
+              },
+              "queryRef": "fact_statements.Total Credit Limit",
+              "nativeQueryRef": "Total Credit Limit",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "Current Outstanding"
+                }
+              },
+              "queryRef": "fact_statements.Current Outstanding",
+              "nativeQueryRef": "Current Outstanding",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "Available Credit"
+                }
+              },
+              "queryRef": "fact_statements.Available Credit",
+              "nativeQueryRef": "Available Credit",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "Utilisation %"
+                }
+              },
+              "queryRef": "fact_statements.Utilisation %",
+              "nativeQueryRef": "Utilisation %",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Per card'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+table dim_category
+	lineageTag: fe3ae95f-2d3f-4496-b2b9-25a305030ccc
+
+	column category_group
+		dataType: string
+		lineageTag: 32ff3090-cb26-4a45-9d76-236a5c0d1477
+		summarizeBy: none
+		sourceColumn: category_group
+
+	column subcategory
+		dataType: string
+		lineageTag: 2bb1acaa-b299-42bd-a9ea-626cfc04535a
+		summarizeBy: none
+		sourceColumn: subcategory
+
+	column sort_order
+		dataType: int64
+		lineageTag: 10c20b31-e3c8-4734-9850-8c73ac79db92
+		summarizeBy: none
+		sourceColumn: sort_order
+
+	column is_discretionary
+		dataType: string
+		lineageTag: 0de42508-9230-4dd4-bf2f-90973108661f
+		summarizeBy: none
+		sourceColumn: is_discretionary
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_category = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(ProjectFolder & "\config\categories.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"sort_order", Int64.Type}})
+				in
+					Typed
+

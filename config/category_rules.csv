@@ -1,0 +1,108 @@
+priority,pattern,subcategory
+10,SWIGGY,Swiggy
+11,ZOMATO,Zomato
+12,DOMINOS,Restaurants
+13,BLINKIT,Quick Commerce
+14,ZEPTO,Quick Commerce
+15,BIGBASKET,Quick Commerce
+16,DUNZO,Quick Commerce
+17,STARBUCKS,Restaurants
+18,KFC,Restaurants
+19,MCDONALD,Restaurants
+20,AMAZON,Amazon
+21,FLIPKART,Flipkart
+22,MYNTRA,Clothing
+23,AJIO,Clothing
+24,NYKAA,Clothing
+25,MEESHO,Clothing
+30,INDIGO,Flights
+31,AIR INDIA,Flights
+32,VISTARA,Flights
+33,MAKEMYTRIP,Flights
+34,GOIBIBO,Hotels
+35,OYO,Hotels
+36,AIRBNB,Hotels
+37,TAJ,Hotels
+40,UBER,Cabs
+41,OLA,Cabs
+42,RAPIDO,Cabs
+43,IOCL,Fuel
+44,HPCL,Fuel
+45,BPCL,Fuel
+46,SHELL,Fuel
+47,IRCTC,Flights
+50,AIRTEL,Telecom
+51,JIO,Telecom
+52,VODAFONE,Telecom
+53,BSNL,Telecom
+54,TATA POWER,Utilities
+55,ADANI ELECTRICITY,Utilities
+56,BESCOM,Utilities
+57,LIC,Insurance
+58,HDFC LIFE,Insurance
+59,POLICYBAZAAR,Insurance
+60,NETFLIX,Streaming
+61,SPOTIFY,Streaming
+62,PRIME VIDEO,Streaming
+63,HOTSTAR,Streaming
+64,JIOCINEMA,Streaming
+65,YOUTUBE,Streaming
+66,BOOKMYSHOW,Events
+67,PVR,Events
+68,INOX,Events
+69,STEAM,Gaming
+70,GOOGLE PLAY,Subscriptions
+71,APPLE,Subscriptions
+72,ADOBE,Subscriptions
+73,MICROSOFT,Subscriptions
+74,OPENAI,Subscriptions
+75,ANTHROPIC,Subscriptions
+80,ATM,Cash
+81,CASH WITHDRAWAL,Cash
+5,EMI INT,Fees & Interest
+6,EMI PRIN,EMI
+9,BUNDL,Swiggy
+8,INSTAMART,Quick Commerce
+76,GOOGLEPLAY,Subscriptions
+77,SOULED STORE,Clothing
+78,STEAMGAMES,Gaming
+79,PLAYSTATION,Gaming
+82,EPIC GAMES,Gaming
+83,DISTRICT DINING,Restaurants
+24,RELIANCE DIGITAL,Electronics
+85,RIOT,Gaming
+86,BOOK MY SHOW,Events
+87,BIGTREE,Events
+88,UPI DISTRICT,Events
+89,GOOGLE,Subscriptions
+90,ACMI,Education
+91,UNIV,Education
+92,ETS TESTING,Education
+93,NOVA SCHOOL,Education
+94,SKILLNEST,Education
+95,1MG,Health
+96,SUPER MARKET,Groceries
+97,SUBWAY,Restaurants
+98,SPICE HOUSE,Restaurants
+99,CITYBITE BURGER,Restaurants
+100,BLINK COMMERCE,Quick Commerce
+101,WWWBIGBASKETCOM,Quick Commerce
+102,INNOVATIVE RETAIL CONCE,Quick Commerce
+103,BALMER LAWRIE,Travel
+104,AIRPORT LOUNGE,Travel
+105,MCAFFEINE,Online Shopping
+106,SMYTTEN,Online Shopping
+107,DAILYMART,Groceries
+108,AVENUE E COMMERCE,Groceries
+109,SNOW SCOOP,Restaurants
+110,MC DONALDS,Restaurants
+111,MCDONALDS,Restaurants
+112,JUBILANT FOODWORKS,Restaurants
+113,FORGN CURR MARKUP,Misc
+114,ASSPL,Amazon
+115,DELHIVERY,Misc
+116,RAZORPAY PAYMENTS,Misc
+117,SALE DOMESTIC NOTONUS,Misc
+118,CARD CASHBACK DEBIT,Misc
+119,ZEROISE CARD ACCOUNT,Misc
+120,LUMISHOP,Misc

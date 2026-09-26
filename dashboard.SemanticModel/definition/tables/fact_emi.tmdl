@@ -1,0 +1,145 @@
+table fact_emi
+	lineageTag: b392f423-690c-463b-bc2d-6c566b027ff7
+
+	/// Instalment plans still running, as each statement reports them. HDFC
+	/// prints a rate and the interest still payable but no finish date; ICICI
+	/// prints a finish date and the instalment amount but no rate. Those gaps
+	/// are what the issuer omits, not what the parser missed.
+	measure 'EMI Plans' = CALCULATE(COUNTROWS(fact_emi), fact_emi[status] = "active")
+		formatString: #,0
+		lineageTag: 49f3e812-963e-4804-a535-b15364f463f4
+
+	measure 'EMI Outstanding' = CALCULATE(SUM(fact_emi[outstanding]), fact_emi[status] = "active")
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 46048521-3c3a-40be-8daa-bdf11b27c901
+
+	measure 'EMI Principal' = CALCULATE(SUM(fact_emi[principal]), fact_emi[status] = "active")
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 39db8d01-2075-471b-a8b6-7bbeb225bfb2
+
+	/// Longest run still to go -- how long until this commitment is clear.
+	measure 'EMI Months Left' = CALCULATE(MAX(fact_emi[remaining_months]), fact_emi[status] = "active")
+		formatString: #,0
+		lineageTag: 2edd6e98-37b3-4550-9024-21ecfa9adf5d
+
+	measure 'EMI Interest Payable' = CALCULATE(SUM(fact_emi[interest_payable]), fact_emi[status] = "active")
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 14fcbb92-6787-42a9-80fd-ec8aae48db2a
+
+	measure 'EMI Monthly Instalment' = CALCULATE(SUM(fact_emi[instalment_amount]), fact_emi[status] = "active")
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 3d07d8c0-4313-4588-9672-2ecf09695571
+
+	column card_id
+		dataType: string
+		lineageTag: 42302e72-e8dc-427e-9ded-a079afce0f4f
+		summarizeBy: none
+		sourceColumn: card_id
+
+	column statement_id
+		dataType: string
+		lineageTag: 877fb655-b8f7-457d-a9c1-9f71ed35924f
+		summarizeBy: none
+		sourceColumn: statement_id
+
+	column loan_ref
+		dataType: string
+		lineageTag: e76268b3-d43a-40f6-899b-dfa4a21addaa
+		summarizeBy: none
+		sourceColumn: loan_ref
+
+	column loan_type
+		dataType: string
+		lineageTag: d244ec0a-2550-4011-8124-c6cdcb7bed63
+		summarizeBy: none
+		sourceColumn: loan_type
+
+	column start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a76144c4-0717-4fc0-b413-30edb2e18a56
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e83b8763-5d8c-4cf6-827b-a68eb8d90720
+		summarizeBy: none
+		sourceColumn: end_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column principal
+		dataType: double
+		lineageTag: a3a4ed98-8f98-4f28-83c3-89c011a7c4b9
+		summarizeBy: sum
+		sourceColumn: principal
+
+	column tenure_months
+		dataType: int64
+		lineageTag: 6cf8c6b0-1e5d-45a3-8fd0-ed9dc6d15e6d
+		summarizeBy: sum
+		sourceColumn: tenure_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column remaining_months
+		dataType: int64
+		lineageTag: b65dfb3a-a6b9-458f-b381-00d978ce7e53
+		summarizeBy: sum
+		sourceColumn: remaining_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column interest_rate
+		dataType: double
+		lineageTag: 69519d46-4c80-4cfe-9bad-ff598f35bd57
+		summarizeBy: sum
+		sourceColumn: interest_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column instalment_amount
+		dataType: double
+		lineageTag: 6397d90d-eb27-46ea-9667-009744d52ee7
+		summarizeBy: sum
+		sourceColumn: instalment_amount
+
+	column interest_payable
+		dataType: double
+		lineageTag: 23b4318c-33e4-4983-bd04-01cbb124877f
+		summarizeBy: sum
+		sourceColumn: interest_payable
+
+	column outstanding
+		dataType: double
+		lineageTag: 7b92efe6-db6c-41b1-bd7f-4ec4b5bd049e
+		summarizeBy: sum
+		sourceColumn: outstanding
+
+	column source_file
+		dataType: string
+		lineageTag: 8a5ca46c-57e2-443d-b88f-0caa94da92de
+		summarizeBy: none
+		sourceColumn: source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	partition fact_emi = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(ProjectFolder & "\output\emi_plans.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"start_date", type date}, {"end_date", type date}, {"principal", type number}, {"tenure_months", Int64.Type}, {"remaining_months", Int64.Type}, {"interest_rate", type number}, {"instalment_amount", type number}, {"interest_payable", type number}, {"outstanding", type number}})
+				in
+					Typed
+

@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    # The project is Windows-only: Credential Manager, PowerShell, Power BI Desktop.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.lock
+
+      - name: Install pinned packages
+        run: python -m pip install -r requirements.lock
+
+      - name: Lint
+        run: python -m ruff check .
+
+      - name: Types
+        run: python -m mypy
+
+      - name: Tests
+        run: python -m pytest
+
+      - name: No private data in the repository
+        run: python tools/check_secrets.py --all

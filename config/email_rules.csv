@@ -1,0 +1,6 @@
+card_id,sender_contains,subject_contains,body_contains,filename_pattern
+hdfc_millennia,hdfcbank,Millennia,,*.pdf
+hdfc_regalia,hdfcbank,Regalia,,*.pdf
+icici_coral,icicibank,Coral,,*.pdf
+sbi_elite,sbicard,Elite,,*.pdf
+sbi_bpcl,sbicard,BPCL,,*.pdf

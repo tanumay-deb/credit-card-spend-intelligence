@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocks a commit that would put passwords, statements or outputs into git.
+# Turned on by tools/install.ps1: git config core.hooksPath .githooks
+exec ./.venv/Scripts/python.exe tools/check_secrets.py --staged

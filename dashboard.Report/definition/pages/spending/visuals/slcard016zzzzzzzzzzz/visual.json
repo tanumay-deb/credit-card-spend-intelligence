@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "slcard016zzzzzzzzzzz",
+  "position": {
+    "x": 20,
+    "y": 440,
+    "z": 16,
+    "height": 300,
+    "width": 240,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_card"
+                    }
+                  },
+                  "Property": "card_name"
+                }
+              },
+              "queryRef": "dim_card.card_name",
+              "nativeQueryRef": "card_name",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Card'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

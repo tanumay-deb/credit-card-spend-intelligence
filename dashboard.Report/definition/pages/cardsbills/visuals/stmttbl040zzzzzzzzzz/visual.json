@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "stmttbl040zzzzzzzzzz",
+  "position": {
+    "x": 1100,
+    "y": 620,
+    "z": 40,
+    "height": 430,
+    "width": 800,
+    "tabOrder": 40
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "statement_date"
+                }
+              },
+              "queryRef": "fact_statements.statement_date",
+              "nativeQueryRef": "statement_date",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_card"
+                    }
+                  },
+                  "Property": "card_name"
+                }
+              },
+              "queryRef": "dim_card.card_name",
+              "nativeQueryRef": "card_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "total_due"
+                }
+              },
+              "queryRef": "fact_statements.total_due",
+              "nativeQueryRef": "total_due",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "min_due"
+                }
+              },
+              "queryRef": "fact_statements.min_due",
+              "nativeQueryRef": "min_due",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_statements"
+                    }
+                  },
+                  "Property": "due_date"
+                }
+              },
+              "queryRef": "fact_statements.due_date",
+              "nativeQueryRef": "due_date",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Statements'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

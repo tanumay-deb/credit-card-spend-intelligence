@@ -1,0 +1,187 @@
+table fact_transactions
+	lineageTag: 373245d7-851e-4f7f-b94c-fc949a372a17
+
+	/// Spend as billed: charges add, refunds subtract, and payments, cashback and
+	/// returned autopays count nothing. The rules live in creditcard/spend.py and
+	/// arrive as spend_amount, so an EMI purchase and its conversion credit net to
+	/// zero and only the monthly instalments remain.
+	measure 'Total Spend' = SUM(fact_transactions[spend_amount])
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: ebf6d89b-c981-4b2a-8bb5-05a2b7d41f08
+
+	measure Transactions = CALCULATE(COUNTROWS(fact_transactions), fact_transactions[spend_amount] > 0)
+		formatString: #,0
+		lineageTag: 8c36dede-58c7-4db0-b3a5-fca3d53a8b3e
+
+	measure 'Avg Transaction' = DIVIDE(CALCULATE(SUM(fact_transactions[spend_amount]), fact_transactions[spend_amount] > 0), [Transactions])
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 85a22995-e98a-4a71-9b76-9673cea6af0e
+
+	/// Uncategorised means not yet known, and is deliberately distinct from
+	/// Others/Misc, which is a decision someone made. Only this is a backlog.
+	measure 'Uncategorised %' = DIVIDE(CALCULATE([Total Spend], fact_transactions[subcategory] = "Uncategorised"), [Total Spend])
+		formatString: 0.0%
+		lineageTag: 0bc6312b-963c-45d6-b777-5e76224472ec
+
+	/// Card charges -- fees, GST and interest on unpaid balances -- net of any
+	/// reversal matched to them. EMI interest sits under EMI.
+	measure 'Interest & Fees' = CALCULATE([Total Spend], fact_transactions[subcategory] = "Fees & Interest")
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: e74bc52b-0f5f-4dbd-a008-6c6379310399
+
+	measure 'Number of Cards' = DISTINCTCOUNT(fact_transactions[card_id])
+		formatString: #,0
+		lineageTag: 79191b23-0716-4c28-afc1-d538664b0300
+
+	/// The most recent statement date held. Spend after this date is not in the
+	/// data at all, so the latest cycle always reads low until its PDF arrives.
+	measure 'Billed Through' = MAX(fact_statements[statement_date])
+		lineageTag: a42236dd-15b8-4500-abe5-811256f44eb1
+
+	/// Light green for money coming in. Blank for debits, which leaves them
+	/// uncoloured instead of giving them a colour of their own.
+	measure 'Credit Row Colour' = IF(SELECTEDVALUE(fact_transactions[direction]) = "credit", "#C6EFCE")
+
+	/// Rewards credited back. Kept out of Total Spend: cashback is not a refund of
+	/// anything bought.
+	measure 'Cashback Earned' = CALCULATE(SUM(fact_transactions[amount]), fact_transactions[txn_type] = "cashback")
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+
+	/// Total Spend on purchases and their refunds only, so a merchant ranking is not
+	/// topped by EMI instalments, fees or GST lines.
+	measure 'Merchant Spend' = CALCULATE([Total Spend], fact_transactions[txn_type] IN {"purchase", "refund"})
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+
+	column txn_id
+		dataType: string
+		lineageTag: 530e17e6-2933-4672-8c5a-56c88b7d7012
+		summarizeBy: none
+		sourceColumn: txn_id
+
+	column card_id
+		dataType: string
+		lineageTag: b660ffd3-4f17-4eba-8ec5-9d7da99cdfc5
+		summarizeBy: none
+		sourceColumn: card_id
+
+	column statement_id
+		dataType: string
+		lineageTag: 2dc99d02-4c87-4b66-a89d-4edc892b6592
+		summarizeBy: none
+		sourceColumn: statement_id
+
+	column txn_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1d1048da-47bb-4437-9cbc-407bd739f940
+		summarizeBy: none
+		sourceColumn: txn_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column merchant_raw
+		dataType: string
+		lineageTag: d7716ad1-eb7f-46bd-8238-797fc5474353
+		summarizeBy: none
+		sourceColumn: merchant_raw
+
+	column merchant_clean
+		dataType: string
+		lineageTag: 4e08e3e1-a786-4bfb-a745-cea57b88a67a
+		summarizeBy: none
+		sourceColumn: merchant_clean
+
+	column amount
+		dataType: double
+		lineageTag: ec0d4317-cf31-42c9-9c17-d142408f328e
+		summarizeBy: sum
+		sourceColumn: amount
+
+	column spend_amount
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: spend_amount
+
+	column direction
+		dataType: string
+		lineageTag: 9e632e30-1dec-4bed-9232-17bc4f648f9d
+		summarizeBy: none
+		sourceColumn: direction
+
+	column txn_type
+		dataType: string
+		lineageTag: 2c40e9e8-0bc6-4393-8739-d37f75e02dee
+		summarizeBy: none
+		sourceColumn: txn_type
+
+	column category_group
+		dataType: string
+		lineageTag: 8f6ecf0a-6273-4b49-b468-ac8a96ce53e2
+		summarizeBy: none
+		sourceColumn: category_group
+
+	column subcategory
+		dataType: string
+		lineageTag: c3542b85-33ee-4103-9a01-fe41620fc7cf
+		summarizeBy: none
+		sourceColumn: subcategory
+
+	column category_source
+		dataType: string
+		lineageTag: 8846ad2c-7710-4e92-81de-652f74499790
+		summarizeBy: none
+		sourceColumn: category_source
+
+	column posting_date
+		dataType: string
+		lineageTag: 844f51aa-8ac6-46e8-86ef-8d74f639ddaa
+		summarizeBy: none
+		sourceColumn: posting_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_forex
+		dataType: string
+		lineageTag: 86c38f4d-4436-4a19-a6b6-8dc0410271cb
+		summarizeBy: none
+		sourceColumn: is_forex
+
+		annotation SummarizationSetBy = Automatic
+
+	column forex_ccy
+		dataType: string
+		lineageTag: 7fad0f9c-c781-46f9-adda-eff8d62db1f6
+		summarizeBy: none
+		sourceColumn: forex_ccy
+
+		annotation SummarizationSetBy = Automatic
+
+	column forex_amount
+		dataType: string
+		lineageTag: 1f15fc4c-702e-49da-a9db-ec23b9213032
+		summarizeBy: none
+		sourceColumn: forex_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_file
+		dataType: string
+		lineageTag: c4c6acf4-5160-41f7-a8a0-9d151e5fac03
+		summarizeBy: none
+		sourceColumn: source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_transactions = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(ProjectFolder & "\output\transactions.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Blanked = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"spend_amount"}),
+					Typed = Table.TransformColumnTypes(Blanked, {{"txn_date", type date}, {"amount", type number}, {"spend_amount", type number}})
+				in
+					Typed
+
+	annotation PBI_ResultType = Table
+

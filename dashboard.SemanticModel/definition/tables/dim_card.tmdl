@@ -1,0 +1,73 @@
+table dim_card
+	lineageTag: 8ec2195f-8708-4d6c-a2be-30ec7c1d3491
+
+	column card_id
+		dataType: string
+		lineageTag: ffe4e64d-8d13-4df4-9eff-526028b244ed
+		summarizeBy: none
+		sourceColumn: card_id
+
+	column issuer
+		dataType: string
+		lineageTag: c0d15d30-b27e-4618-ae04-110e2519568a
+		summarizeBy: none
+		sourceColumn: issuer
+
+	column card_name
+		dataType: string
+		lineageTag: b3076062-9d79-4ed5-aae7-59627e2b7123
+		summarizeBy: none
+		sourceColumn: card_name
+
+	column last4
+		dataType: string
+		lineageTag: 79c68f51-37ec-45d5-8999-c4d5c231cbe5
+		summarizeBy: none
+		sourceColumn: last4
+
+	column limit_group
+		dataType: string
+		lineageTag: f593b4c8-5ef7-4d0a-b486-35f3fa52ef7a
+		summarizeBy: none
+		sourceColumn: limit_group
+
+	column credit_limit
+		dataType: double
+		lineageTag: 22f7aeed-5079-4d18-9486-3634efae45c9
+		summarizeBy: sum
+		sourceColumn: credit_limit
+
+	column parser
+		dataType: string
+		lineageTag: 050072c3-faa0-4c4c-bff5-636222ca94ce
+		summarizeBy: none
+		sourceColumn: parser
+
+		annotation SummarizationSetBy = Automatic
+
+	column password_env
+		dataType: string
+		lineageTag: cbefe8fb-304d-491c-8538-ed625c06f334
+		summarizeBy: none
+		sourceColumn: password_env
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement_day
+		dataType: string
+		lineageTag: 7e763e51-c4a2-445a-91f4-345888371d6e
+		summarizeBy: none
+		sourceColumn: statement_day
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_card = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(ProjectFolder & "\config\cards.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"credit_limit", type number}})
+				in
+					Typed
+

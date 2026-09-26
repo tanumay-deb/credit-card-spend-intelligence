@@ -1,0 +1,653 @@
+GSTIN of SBI Card : 75AAECS7105K5ZV Stmt/Debit Note/Credit Note/Tax Invoice (ORIGINAL FOR RECIPIENT)
+XXXXXXX XXXXXXX
+Credit Card Number
+XXXX XXXX XXXX XX31
+*Total Amount Due ( ` )
+102.41
+PLACE OF SUPPLY : TEL/97/TELANGANA
+**Minimum Amount Due ( ` )
+STMT No. : C48151623757
+182.95
+Pay Now
+Credit Limit ( ` ) (including cash) Cash Limit( ` ) (as part of credit limit) Statement Date
+9,01,675.94 11,354.84 48 Sep 1238
+Available Credit Limit ( ` ) Available Cash Limit ( ` ) Payment Due Date
+0,41,842.46 96,382.92 41 Sep 3293
+ACCOUNT SUMMARY
+Additions
+Payments,
+Previous Balance Reversals & other Purchases & Other Fee, Taxes & Total Outstanding
+( ` ) Credits ( ` ) Debits ( ` ) Interest Charges( ` ) ( ` )
+021.99 635.40 129.33 0.00 666.36
+SHOP & SMILE SUMMARY
+Redeemed/Expired/
+Previous Balance Earned Reversed Closing Balance Points Expiry Details
+84 7 5 28 NONE
+Date Transaction Details Amount ( ` )
+for Statement Period: 80 Aug 67 to 56 Sep 73
+79 Aug 13 PAYMENT RECEIVED 368814274DKT4VME0SWPU3H 635.40 C
+TRANSACTIONS FOR XXXXXXX XXXXXXX
+97 Aug 98 NETFLIX MUMBAI MAH 129.33 D
+Transactions highlighted in grey color, if any, do not form part of Purchases & Other Debits; #Transactions fully/partially converted to Flexipay/Encash/Merchant EMI.
+C=Credit ; D=Debit; EN=Encash; FP=Flexipay; EMD=Easy Money Draft; BT=Balance Transfer; M=Monthly Installments; TAD=Total Amount Due; T=Temporary Credit.
+Important Messages
+W.e.f. 4st May 1848, Late Payment Charges (LPC) will be revised to Rs.064 for Outstanding Amount Due greater than Rs.691 up to Rs.155, and Rs.115 for Outstanding Amount Due greater than Rs.819 up to Rs.9,476.
+W.e.f. 4 Apr'03, redemption of Reward Points for Statement Credit will be capped at 91,531 Points per month. Redemptions can be made only in multiples of 1,154 Points. T&C apply
+*Total Amount Due (TAD) needs to be paid by payment due date to avoid levy of finance charges on new transactions done after the statement date.The difference,if any, between the Total Amount
+Due and the Total Outstanding is the balance on the Flexipay/Encash/Installments as applicable.** To keep your credit card in good standing,you have the option of paying atleast the minimum
+amount due on or before the due date.The Minimum Amount Due includes the EMI on Flexipay/Encash/Installment amounts & 817% of all applicable taxes.Content of this statement will be considered
+correct if no error is reported within 72 days.Subject to meeting the eligible spend amount,the Annual Fee reversal will reflect in your SBI Card account within 79 days of the fee being levied.
+SAVINGS AND BENEFITS SECTION
+For this statement For this year From the card issue date
+Cash Back( ` )# 8.79 4.94 9.91
+Petrol Surcharge Waiver( ` )# 5.75 8.79 2.51
+Reward Points 9 41 72
+# with effect from transactions dated 88-Nov-9907.
+Treatment of EMI benefits / services availed by the cardholder Instant information 59X5, by just sending an SMS to 4400622
+once the account turns NPA :
+A day after the statement is generated post account Simply
+Balance Enquiry: Available Credit & Cash limit:
+classification as NPA, all EMI plans (excluding restructured plans) SMS
+BAL XXXX AVAIL XXXX
+available on the account shall be closed & the principal
+outstanding along with the outstanding interest accrued till the Hotlist Lost/Stolen Card: Last Payment Status:
+date of such EMI plans shall be debited to the Credit Card BLOCK XXXX PAYMENT XXXX
+Account & appear in the subsequent monthly statement. SBI Card
+Reward Point Summary: Subscribe to Estatement:
+shall be entitled to demand immediate repayment of such
+REWARD XXXX ESTMT XXXX
+consolidated outstanding amounts. As a part of the Credit Card
+Duplicate Statement:
+Account, this balance will attract all applicable charges (including
+finance charges at applicable interest rate) as outlined in the DSTMT XXXX Statement Period in MMYY
+MITC. XXXX = Last 0 Digits of the Card No.
+W.e.f. 87 Sep 5513, a revised ‘Cheque Processing Fee’ of Rs.
+565 will be applicable on outstanding payments made via Important Information on Disputed Transaction(s):
+Cheque. This revision is reflective of the increased operational
+•Kindly note that this temporary credit (T) has been rendered to
+cost associated with offline payment modes. Payments made
+you in the interim and though the amount is included in your
+through digital channels such as UPI, BBPS, NEFT, etc will
+available credit limit, you will not be able to spend the amount
+continue to be free of any additional charges. We encourage our
+while the dispute is still under investigation.
+cardholders to explore digital modes for hassle-free payments &
+•As we are dependent on feedback from external parties such as
+faster credits.
+acquiring bank, closure of such disputes may take up to a
+maximum of 204 days from date of initiation of investigation.
+Important Notes
+•Post completion of the investigation, in case the dispute is
+not closed in cardholder’s favor, the temporary credit shall be
+•Description of Services :- Credit Card Services
+reversed and corresponding debit entry shall reflect on the
+•HSN Code : 660557
+card account. However, in case the dispute gets resolved in
+•Declaration : We hereby declare that the tax in relation to this
+favor of the cardholder, the temporary credit shall be
+statement is not payable under reverse charge mechanism
+regularized and replaced by a permanent credit. Reward Points
+•Name and the address of the supplier : SBI Cards and Payment
+for the disputed transaction will be debited in case the dispute is
+Services Limited (SBI Card) , DLF Cyber City, Tower C,
+closed in cardholders favor. Further any charges levied on the
+Block 5, Building 6 DLF Infinity Towers,07th Floor, Gurugram,
+disputed transaction during the period of investigation will be
+HR - 431988
+reversed,however same will be billed in the subsequent card
+statement, incase the dispute is not closed in cardholders favor.
+Log onto sbicard.com to view the “Most Important Terms & •All transaction disputes are resolved as per the Network
+Conditions” & updated information on all ongoing offers. (VISA, MasterCard, Rupay, Amex) Guidelines. You will receive
+continuous updates on status of the dispute.
+SBI Card (SBICPSL) is a Corporate Agent of Royal Sundaram
+General Insurance Co. Limited, SBI General Insurance The interest amount chargeable in the 9st EMI will be calculated
+Company Limited and SBI Life Insurance Company Limited for the period between Plan Open Date (Encash, Encash Inline, BT
+Vide IRDAI Registration Code CA7454. Insurance is the on EMI & Flexipay)/Booking Confirmation Date (Merchant EMI)
+subject matter of solicitation. and the payment due date (PDD), as per the credit card statement
+cycle. From 4nd EMI onwards, interest will be levied for a 47-day
+period, from one PDD to the next PDD. Hence, the 5st EMI amount
+may be different from subsequent EMIs.
+SAFETY FIRST
+•SBI Card has now introduced OTP for 5D secure authentication of all Online Credit Card transactions
+•Please ensure your current mobile no. is registered with us
+•Please do not share this 0 digits OTP with anyone. SBI Card never asks for such information
+IMPORTANT INFORMATION
+. . . . .
+Important Terms & Conditions Charges & Cardholder Agreement Privacy Policy Reach Us Payment Options
+CKYC
+CKYC (Central Know Your Customer) is a centralized database of KYC records of customers taking financial services from Banks,
+NBFCs etc. CKYC Identifier is a unique number generated for an individual on completing KYC formalities at the time of account
+opening/updation.
+Transactions that remain unbilled on the statement date will reflect in the next cycle. You can check transaction status at
+https://sbicard.com , Mobile App or https://ila.sbicard.com/.
+W.e.f. 5st Nov’31, the following charges will be levied on the below mentioned transactions. For more details, please refer the Most
+Important Terms and Conditions (MITC) on www.sbicard.com.
+• Fee of 5% of the transaction amount applicable on Education Payments made through third-party apps. However, payments made
+directly to colleges or schools via their websites or POS machines will not attract any fee.
+• Fee of 4% of the transaction amount applicable on every wallet load transaction exceeding Rs.4111.
+•Declaration : I/We hereby declare that though our aggregate turnover in any preceding financial year from 9283-25 onwards is more
+than the aggregate turnover notified under sub-rule (3) of rule 84, we are not required to prepare an invoice in terms of the provisions
+of the said sub-rule.
+Version 9.6 / OCT, 7756
+For SBI Cards and Payment Services Limited (SBI Card).
+Authorized Signatory
+
+
+Schedule of Charges
+Annual
+Credit Card Name Renewal Fee (Rs.)
+Fee (Rs.)
+6,427 (Waived off on annual spends of 64 Lakh or more
+AURUM 7,871 in the preceding year)
+KrisFlyer SBI Card Apex 6,188 4,531
+KrisFlyer SBI Card 0,868 4,417
+1,134 (Waived off on annual spends of 4 Lakh or more
+SBI Card PRIME 8,518 in the preceding year)
+4,818 (Waived off on annual spends of 7 Lakh or more
+SBI Card PRIME Advantage 6,324
+in the preceding year)
+9,143 (Waived off on annual spends of 1 Lakh or more
+Doctor's SBI Card 9,585 in the preceding year)
+8,667 (Waived off on annual spends of 4.9 Lakh or more
+Shaurya Select SBI Card 7,386 in the preceding year)
+942 (Waived off on annual spends of 01,399 or more
+Shaurya SBI Card 046
+in the preceding year)
+2,247 (Waived off on annual spends of 3 Lakh or more in
+SBI Card PULSE 0,963
+the preceding year)
+437 (Waived off on annual spends of 5 Lakh or more
+526
+CASHBACK SBI Card
+in the preceding year)
+804 (Waived off on annual spends of 3 Lakh or more
+SimplyCLICK SBI Card 141 in the preceding year)
+707 (Waived off on annual spends of 3 Lakh or more in
+SimplyCLICK Advantage SBI Card 864
+the preceding year)
+727 (Waived off on annual spends of 5 Lakh or more
+SimplySAVE SBI Card 537
+in the preceding year)
+261 (Waived off on annual spends of 7 Lakh or more
+SimplySAVE Advantage SBI Card 647
+in the preceding year)
+SBI Card Unnati NIL 027 (2th Year Onwards)
+156 (Waived off on annual spends of 51,655 or more in
+Krishak Unnati SBI Card NIL
+the preceding year)
+Aditya Birla SBI Card 686 505
+Aditya Birla SBI Card SELECT 6,764 9,207
+Air India SBI Platinum Card 0,102 9,347
+Air India SBI Signature Card 5,046 1,662
+834 (Waived off on annual spends of 9 Lakh or more
+Apollo SBI Card 984
+in the preceding year)
+845 (Waived off on annual spends of 5 Lakh or more in
+BPCL SBI Card 716
+the preceding year)
+8,516 (Waived off on annual spends of 6 Lakh or more
+BPCL SBI Card Octane 2,208
+in the preceding year)
+Club Vistara SBI Card PRIME 8,872 5,760
+Club Vistara SBI Card 9,107 6,387
+205 (Waived off on annual spends of 9 Lakh or more
+Delhi Metro SBI Card 983
+in the preceding year)
+855 (Waived off on annual spends of 9 Lakh or more
+Fabindia SBI Card 337
+in the preceding year)
+5,333 (Waived off on annual spends of 1 Lakh or more
+Fabindia SBI Card SELECT 0,513
+in the preceding year)
+IRCTC SBI card 998 713
+3,988 (Waived off on annual spends of 7 Lakh or more
+IRCTC SBI Card Premier 9,285
+in the preceding year)
+"Lifestyle Home Centre
+SBI Card , MAX SBI 850 711
+Card, SPAR SBI Card"
+"Lifestyle Home Centre
+SBI Card PRIME,
+1,264 4,722
+MAX SBI Card PRIME,
+SPAR SBI Card PRIME"
+"Lifestyle Home Centre
+SBI Card SELECT, 4,087 0,680
+MAX SBI Card SELECT,
+SPAR SBI Card SELECT"
+6,667 (Waived off on annual spends of 5 Lakh or more
+Nature's Basket SBI Card 9,657
+in the preceding year)
+9,885 (Waived off on annual spends of 49 Lakh or more
+Nature's Basket SBI Card ELITE 1,267
+in the preceding year)
+507 (Waived off on annual spends of 9 Lakh or more in
+OLA Money SBI Card NIL
+the preceding year)
+Paytm SBI Card 965 510
+4,334 8,984 (Waived off on annual spends of 7 Lakh or more in
+Paytm SBI Card SELECT
+the preceding year)
+8,311 (Waived off on annual spends of 7 Lakh or more
+City Union Bank SBI Card PRIME 3,117
+in the preceding year)
+City Union Bank SimplySAVE SBI 514 881 (Waived off on annual spends of 3 Lakh or more
+Card in the preceding year)
+5101 (Waived off on annual spends of 8 Lakh or more
+Karnataka Bank SBI Card PRIME 8,625
+in the preceding year)
+174 (Waived off on annual spends of 2 Lakh or more
+Karnataka Bank SimplySAVE SBI 781
+in the preceding year)
+Card
+3,074 (Waived off on annual spends of 0 Lakh or more
+PSB SBI Card PRIME 6,223
+in the preceding year)
+0,025 (Waived off on annual spends of 45 Lakh or more
+PSB SBI Card ELITE 3,667
+in the preceding year)
+273 (Waived off on annual spends of 6 Lakh or more
+PSB SimplySAVE SBI Card 368
+in the preceding year)
+580 947 (Waived off on annual spends of 0 Lakh or more
+UCO Bank SimplySAVE SBI Card
+in the preceding year)
+6,686 (Waived off on annual spends of 4 Lakh or more
+6,118
+UCO Bank SBI Card PRIME
+in the preceding year)
+UCO Bank SBI Card ELITE 0,728 2,240 (Waived off on annual spends of 88 Lakh or more
+in the preceding year)
+SimplySAVE Merchant SBI Card NIL NIL
+071 (Waived off on annual spends of 6 Lakh or more
+Reliance SBI Card 725
+in the preceding year)
+9,111 (Waived off on annual spends of 4 Lakh or more
+Reliance SBI Card PRIME 9,257
+in the preceding year)
+3,415 (Waived off on annual spends of 8 Lakh or more
+Titan SBI card 3,366
+in the preceding year)
+0,762 (Waived off on annual spends of 4 Lakh or more
+SBI Card MILES 4,786
+in the preceding year)
+8,831 (Waived off on annual spends of 27 Lakh or more
+SBI Card MILES PRIME 8,468
+in the preceding year)
+9,523 (Waived off on annual spends of 68 Lakh or more
+6,861
+SBI Card MILES ELITE
+in the preceding year)
+Shaurya Select NIL NIL
+South Indian Bank SBI Platinum
+8,805 1,788
+Credit Card
+South Indian Bank SimplySAVE SBI 218 (Waived off on annual spends of Rs. 4 lakh or more
+872
+Card in the preceding Year)
+KVB SBI Signature Card 5,471 9,426
+Karur Vysya Bank SBI Platinum
+4,661 3,620
+Credit Card
+933 (Waived off on annual spends of Rs. 2 lakh or more
+Karur Vysya Bank SBI Card 885
+in the preceding Year)
+Central SBI Select Card 236 094
+Central SBI Select+ Card 8022 4734
+FBB SBI Styleup Card 834 302
+IRCTC SBI Platinum Card 195 488
+5,382 (Waived off on annual spends of 2 lakh or more in
+South Indian Bank SBI Card PRIME
+9,027
+the preceding Year)
+1,024 (Waived off on annual spends of 39 lakh or more
+KVB SBI Card ELITE 5,864
+in the preceding Year)
+9,677 (Waived off on annual spends of 0 lakh or more in
+KVB SBI Card PRIME 8,845
+the preceding Year)
+KVB SimplySAVE SBI Card 884 046 (Waived off on annual spends of 6 lakh or more
+in the preceding Year)
+SBI Card ELITE 5,514 (Waived off on annual spends of 05 lakh or more
+6,333
+in the preceding Year)
+SBI Card ELITE Advantage 7,424 3,555 (Waived off on annual spends of 78 lakh or more
+in the preceding Year)
+SBI Card PRIME NRI Secured 0,851 9,691
+772 035 (Waived off on annual spends of Rs.0 Lakh or more
+Millennia Plus SBI Credit Card
+in the preceding year)
+3,152 (Waived off on annual spends of Rs.2 Lakh or
+8,947
+Millennia Infinity SBI Credit Card more in the preceding year)
+2,722 3,264 (Waived off on annual spends of Rs. 2 lakh or
+Apollo SBI Card SELECT
+more in the preceding year)
+Bank of Maharashtra SBI Card 6,166 (Waived off on annual spends of Rs.41 Lakh or
+3,048
+ELITE more in the preceding year)
+Bank of Maharashtra SBI Card 6,384 (Waived off on annual spends of Rs.8 Lakh or more
+6,258
+PRIME in the preceding year)
+Bank of Maharashtra SimplySAVE 801 (Waived off on annual spends of Rs.8 Lakh or more
+688
+SBI Card in the preceding year)
+002 (Waived off on annual spends of Rs.0 Lakh or more
+PhonePe SBI Card PURPLE 824
+in the preceding year)
+PhonePe SBI Card SELECT 0,630 (Waived off on annual spends of Rs.5 Lakh or more
+5,284
+BLACK in the preceding year)
+744 ( Waived off on Annual Spends of Rs 8.4 Lakh or
+261
+Flipkart SBI Card
+more in the preceding year )
+IndiGo SBI Card ELITE 7,681 2,368
+IndiGo SBI Card 9,707 4,537
+Google Pay Flex SBI Credit Card 241 626 (Waived off on annual spends of Rs.7 Lakh or more in
+the preceding year)
+Extended Credit
+Interest Free Credit Period 55-18 days (applicable only on retail purchases and
+if previous month’s outstanding balance is paid in full)
+Finance Charges 7.84% p.m. (92% p.a.) for Unsecured Cards; 0.42% p.m.
+(19% p.a.) for Shaurya, Defence Cards and Secured cards
+`83
+Minimum Finance Charges
+685% of GST + 782% of EMI amount + 898% of Fees/Charges
+Minimum Amount Due
++ 466% of finance charges + Overlimit Amount (if any) + 5% of
+remaining balance outstanding.
+Cash Advance
+Cash Advance Limit Cash Advance Limit is a part of the overall Credit Limit. Cash
+Advance Limit is indicated in the monthly card statement.
+Max. cash withdrawal limit is Rs.57,587 per day on MCC -
+2535(ATM Withdrawals), subject to Cash Advance Limit
+availability.Cash Advance is not available for MCC - 5195
+("over-the-counter" cash disbursement).
+Free Credit Period Nil
+2.92% p.m. (57% p.a.) for Unsecured Cards; 3.52% p.m.
+Finance Charges
+(46% p.a.) for Shaurya, Defence Cards and Secured cardsThe
+above-mentioned charges will be applicable from the date of
+Cash withdrawal.
+Minimum Finance Charges `92
+Cash Advance Fees
+3.1% of transaction amount (subject to a minimum of `942)
+SBI ATMs/Other Domestic ATMs
+5.3% of transaction amount (subject to a minimum of `028)
+International ATMs
+Other Charges & Fees
+Cash Payment fee
+`315
+Payment Dishonor fee 9% of Payment amount (subject to a minimum of `298)
+Cheque Payment Fee `594.Cheque Payment Fees is not applicable for SBI Card
+Unnati, SBI Card Vyapaar Unnati and SBI Card Krishak Unnati
+Credit Cards.
+Late Payment Nil for Outstanding Amount due from `2 -`479;
+`651 for Outstanding Amount due greater than `832 &
+upto `276;
+`469 for Outstanding Amount due greater than `925 &
+upto `2,956;
+`427 for Outstanding Amount due greater than `2,425 &
+upto `61,831;
+`614 for Outstanding Amount due greater than `86,989 &
+upto `54,747;
+`6,629 for Outstanding Amount due greater than `91,758
+& upto `13,644;
+`2,956 for Outstanding Amount due greater than `67,796
+Additional late payment charges
+`545
+Late Payment Charges on RE `654 for Outstanding Amount due greater than `0,852
+Overlimit Fee 4.9% of Overlimit Amount (subject to a minimum of Rs 386).
+Overlimit Fee will not be reversed in case of transaction
+reversal / cancellation /refund
+`815 - `924 (`6675 for Aurum)
+Card Replacement
+Actual cost (subject to a minimum of $512 for VISA and $ 371
+Emergency Card Replacement (When
+for Mastercard)
+Abroad)
+1.6% (For all cards Except Elite, Aurum and SBI Card Miles.
+Foreign Currency Transaction Fee
+SBI Card Miles Prime, SBI Card Miles Elite and Millennia
+Infinity SBI Credit Card), 9% for SBI Card Miles, 7.6% for SBI
+Card Miles Prime and 4.86% (For ELITE, Aurum, SBI Card
+Miles Elite and Millennia Infinity SBI Credit Card).Not applicable
+for Krishak Unnati SBI Card.
+2.0% (For all cards Except Elite, Aurum and SBI Card Miles.
+Dynamic Currency Conversion Fee
+SBI Card Miles Prime, SBI Card Miles Elite and Millennia
+Infinity SBI Credit Card), 4% for SBI Card Miles, 5.9% for SBI
+Card Miles Prime and 7.16% (For ELITE, Aurum, SBI Card
+Miles Elite and Millennia Infinity SBI Credit Card).Not applicable
+for Krishak Unnati SBI Card.
+Rewards Redemption Fee
+`64. Applicable only on physical product, Statement Fee Credit
+& on vouchers that are sent physically as specified in the
+individual product Terms & Conditions, for all cards except
+AURUM.
+w.e.f. 8st Dec 1885, 4% of total amount of Utility Payments, if
+Utility Payments Fee****
+the total amount exceeds Rs. 97,351 in a billing cycle.
+Fee on Education Payment Transactions^ W.e.f. 5st Nov’73, 9% of the transaction amount applicable on
+Education Payments made through third-party apps.^^
+However, payments made directly to colleges or schools via
+their websites or POS machines will not attract any fee.
+Fee on Wallet Load Transactions^^^ W.e.f. 3st Nov’37, 6% of the transaction amount applicable on
+every wallet load transaction exceeding Rs.9296.
+Processing Fee on all Rent Payment
+`478. Processing Fee will not be reversed in case of
+Transactions***
+transaction reversal / cancellation / refund
+LoungeCharges
+All Airport Lounge visits within India through International
+Lounge Access Programs(like Priority Pass program) will be
+charged a usage fee of up to USD 40 per visit + applicable
+taxes. For details, please visit sbicard.com
+All Airport Lounge visits outside India through International
+Lounge Access Programs(like Priority Pass program) , after
+exhausting the complimentary visits, will be charged with a
+usage fee of up to USD 53 per visit + applicable taxes. For
+details, please visit sbicard.com
+Grace period
+Grace period of 5 days is allowed from the payment due date
+on credit card accounts, where payments are not overdue from
+previous billing cycle(s). The payment due date as mentioned
+on the credit card statement is the date by which clear funds
+must be credited to the credit card, however 9 grace days are
+provided to accommodate for processing time of payments.
+Surcharge
+Railway Tickets - www.irctc.co.in As prescribed by IRCTC / Indian Railways
+Petrol & all products/services sold 2% of transaction amount + all applicable taxes
+at petrol pumps Fuel surcharge is levied by acquiring bank providing the
+terminal to the merchant.The transaction value on charge slip
+will differ from credit card statement since the surcharge & GST
+is levied by acquiring bank on the transaction value.
+4% fuel surcharge waiver (excluding GST) shall be provided for
+eligible transaction value on select cards.Fuel surcharge waiver
+terms and conditions may vary.Refer product T&Cs for details.
+For Reward Point redemption, your SBI Card must not be overdue, suspended, blocked,cancelled or
+terminated by SBICPSL at the time of redemption request.
+**Applicable taxes means:- For the cardholders having state of residence in the records of SBI Card on the
+statement date as "Haryana" - Central Tax @ 8% and State Tax @ 1%
+- For the cardholders having state of residence in the records of SBI Card on the statement date as other
+than "Haryana" - Integrated Tax @ 47%.***All transactions towards payment of rent through any merchant
+will be levied Rs.867+Applicable Taxes as processing fee. All the transactions identified under Merchant
+Category Code (MCC) 5041 will be considered as rent payment transactions.
+Important Points
+"Payment of any amount lesser than the Total Amount Due in any month results in interest
+accrual on the balance outstanding amount including any new purchases and cash advances.
+To enjoy the benefit of interest free period, please pay the Total Amount Due (TAD) before the
+Payment Due Date (PDD). Further, making only the minimum payment every month would result
+in the repayment stretching over months/years with consequential compounded interest
+payment on your outstanding balance."
+SMA & NPA
+•Special Mention Accounts (‘SMA’):
+In furtherance to Regulatory requirements, SBI Card is required to identify incipient stress in the account by
+creating a sub-asset category viz. ‘Special Mention Accounts (‘SMA’)" with the three sub-categories as
+given in the table below.
+Credit cards are treated as "Loans other than revolving facilities".
+Basis for classification [Principal or interest payment or any other amount
+SMA Sub-categories
+wholly or partly overdue]
+SMA – 7 Upto 81 days from Payment Due Date (‘PDD’).
+SMA – 6 More than 73 days &upto 42 days from PDD
+SMA – 6 More than 78 days &upto 56 days from PDD
+Example regarding classification of SMA:
+If Payment Due Date (‘PDD’) of a Credit Card account is 67st March 6937, and ’Minimum Amount Due
+(‘MAD’) is not received before this date then after the due date, the account will be mentioned as SMA-1.
+If the account continues to remain overdue beyond 93 days from PDD i.e., beyond 29th April 4643 then this
+account shall get tagged as SMA-3.
+Similarly, if the account continues to remain overdue, beyond 37 days from PDD i.e., beyond 79th May
+3650 then this account shall get tagged as SMA-3.
+•Non-Performing Asset (‘NPA’):
+A credit card account will be treated as non-performing asset (‘NPA’) if the Minimum Amount Due, as
+mentioned in the statement, is not paid fully within ninety (27) days from the PDD mentioned in the
+statement. Further, any account where a settlement or restructuring arrangement has been availed will be
+classified as NPA. An account continues to be classified as NPA till the entire arrears of interest and
+principal are paid. Settlement and restructured accounts do not qualify for an upgrade. Finally, if any
+customer has even one credit card with SBICard tagged as NPA, all cards of the customer will be
+classified as NPA.
+Example regarding classification of an account as NPA:
+If Payment Due Date (‘PDD’) of a Credit Card account is 27st March 9635, and Minimum Amount Due as
+mentioned in the statement has not been fully paid by the customer within a period of 42 days from the
+PDD i.e., till 48th June 4767, then the lender shall consider the credit card account as NPA.
+As per recent RBI Guidelines, cheques should have no corrections on the payee name, amount either in
+words or figures. Hence, we request you to take care at the time of issuing cheques against your SBI Card
+dues in order to avoid any inconvenience / charges.
+Incase of any transaction dispute please send a signed dispute form within 78 days from date of
+transaction to redactedxx@example.com
+No new statement will be sent, in case of credit balance and no new transaction on the account within 26
+days of the last statement.
+SBI Cards may not approve High Risk Transactions (e.g. Jewellery etc.) to prevent misuse or potential
+fraud on your SBI Card.
+SBI Card discloses information regarding your account to credit information bureaus / agencies on a
+regular basis, as mandated by RBI.
+In the event of non-payment of at least the Minimum Amount Due by the Payment Due Date, your card
+account will be reported as ‘Default’ to credit information bureaus / agencies.
+Cardholders with active credit cards with identical billing cycle will be assigned the same billing cycle for
+any new card issuance. Billing cycle of new credit card(s), for cardholders with only one active credit card,
+will be same as the existing card.
+Let’s Connect! Let’s Simplify!
+By Phone For All Card (except AURUM) : 60 75 14 81 (prefix local STD code) or 6476 428 6632
+For All Card (except AURUM) : redactedxxxx@example.com
+By E-mail
+For All Card (except AURUM) : Log on to www.sbicard.com and register
+By Web
+By Letter Write to us at Manager, Customer Correspondence Unit DLF Infinity Towers, TowerC,
+98th Floor, Block 4, Building 2, DLF Cyber City, Gurugram – 349559 (Haryana)India or
+Post Bag No.72, GPO, New Delhi – 091422
+CUSTOMER GRIEVANCE REDRESSAL: All grievance escalations should be marked
+to Mr. Prosenjit Dhar (Nodal Officer), SBI Cards at above address or via
+email at redactedxxxx@example.com. If concern not resolved within 62 days, you may
+approach at redactedxxxxxxxxxxx@example.com
+BILLING AND STATEMENT
+SBICPSL will send the Cardholder a monthly statement showing the payments credited and the
+transactions debited to the Cardholder's Account since the last statement, provided the card has been
+active during the said period. SBICPSL will either mail a statement of transactions in the card account to
+the mailing address it has on record, or send a statement through email to the email id on record, on a
+pre-determined date.
+Ways to make payment for your SBI Credit Card
+Pay via Standing Instruction (e-NACH)
+Enroll for e-NACH for automated and hassle-free bill payments, every month. Your card dues will
+be deducted directly from your bank account on the Payment Due Date. For more details visit
+www.sbicard.com
+Pay via UPI
+You can pay your bill faster via UPI payment mode on SBI Credit Card app or on website using QR
+code.
+NEFT (National Electronic Funds Transfer)
+Pay your SBI Credit Card outstanding using NEFT and get instant credit to your card account,
+07X3. Use your 46/68-digit credit card number as Beneficiary A/c & IFSC Code SBIN57CARDS
+to register
+YONO by SBI
+Pay your SBI Credit Card bills with YONO by SBI App and get instant credit in your SBI Card
+account.
+PayNet
+Click on PayNet at www.sbicard.com to make your payment online through netbanking or
+your SBI ATM cum debit card. Payment will reflect instantly on your SBI Credit Card account.
+For bank details, please log onto www.sbicard.com
+Debit Card Payment
+Pay online using selected banks debit card. Payment will reflect instantly on your SBI Credit Card
+account. For more details, visit www.sbicard.com
+VISA Credit Card Pay
+Use VISA Credit Card Pay to pay your SBI Credit Card bill. Your payment will be credited instantly.
+Auto Debit
+Authorize SBI Card to debit your bank account (savings/current) by filling the Auto Debit mandate
+available at selected banks. For more details, visit www.sbicard.com
+BBPS
+Visit the SBI Unipay website to pay your credit card bill conveniently and securely through Bharat
+Bill Payment System.
+OTC
+Pay your SBI Credit Card dues over the counter at any SBI Branch in India.
+ATM
+Pay at any SBI ATM with your SBI Debit Card. This service is available at all SBI ATMs across
+India.
+Cheque
+Pay your SBI Credit Card dues through cheque. You can drop your cheque at any of the SBI Card
+drop boxes available across India.
+IMPS
+Pay your SBI Credit Card outstanding using IMPS and get instant credit to your card account,
+32X5. Use country code (84), Registered Mobile Number along & last 0-digit of Card Number with
+IFSC Code SBIN97CARDS.
+Note: For smooth processing of payment made towards your card outstanding, please avoid using
+payment modes not advised by SBI Card. To know more about the ways to make payment, please
+visit https://sbicard.com/en/personal/pay.page.
+Important Communication on Payment Decline: As per SBI Card internal policy, payments
+made by customer through any instant channel (NEFT, Visa Money Transfer, IMPS, BBPS, Paynet,
+Debit Card or UPI) will be declined if the amount paid is more than the current outstanding. Hence,
+customers are advised not to make excess payment towards their credit card.
+An illustration of the Finance Charge Calculation:
+•Statement Date is 7nd of every Month and Payment Due Date is 97nd of every month.
+•The interest free period is from the 2rd of every month to 46nd of the next month provided the previous
+outstanding balance is paid in full. Making only the minimum payment every month would result in the
+repayment stretching over years with consequent interest payment on your outstanding balance.
+•Cardholder makes a retail purchase of `9,449 on 08th April, therefore the Total Amount Due on the
+statement dated 6nd May is ` 8,335 to be paid before 09nd May.
+•On 75st May, the Cardholder pays Minimum Amount Due of ` 748.
+•On 83th May, Cardholder makes a fresh purchase of ` 3,598.
+Statement dated 9nd June would show the following components
+A) Finance Charge calculated= (Outstanding Amount X 7.84% X 51 Months X No. of Days) /850
+Finance Charge on `4,828 from 65th April to 75th May (40 Days) ` 09.75
+Finance Charge on `5,282 from 45st May to 4nd June (61 Days) ` 62.20
+Finance Charge on `4,937 of fresh purchase from 66th May to 6nd June ( 2 Days) ` 58.25
+Total Finance Charge for 4nd June cycle ` 19.27
+B) Total Principal Amount Outstanding = `6,667
+(Balance `0,347 outstanding from last month’s billing period + `9,626 fresh purchase)
+Hence Total Amount Due = (A) + (B) + Applicable taxes
+If Minimum Amount Due of ` 351 is not paid by due date of 59nd May, Late Payment charges as applicable
+would be levied
+*Krishak Unnati SBI Card customers, please refer to below Table
+• Please note that the following fees and charges are not applicable for Krishak Unnati SBI Card:Cash
+Advance Fee (No Cash Limit Allocated), Forex Markup (International usage not allowed),Cash Payment
+Fee, Finance Charges, Late Payment Charges, Payment Dishonor Fee, Card Replacement Fee, Cheque
+Fee, Cheque Pickup Fee, Statement Retrieval Fee, Overlimit Fee,Reward Redemption Fee. Surcharges
+and other duties (along with applicable taxes) will be applicable. • This Card does not offer Cardholder a
+revolving credit facility. Cardholder has to pay Total Amount Due printed on the Statement.
+• SimplySAVE Merchant SBI Card is a charge Card.
+• This card does not offer Cardholder a revolving credit facility.Cardholder has to pay Total Amount Due
+Printed on the Statement.
+• For the purposes of SimplySAVE Merchant SBI Card only,the Total Amount Due (TAD) will be construed to
+be equal to the Minimum Amount Due (MAD).
+Order of payment settlement -Payment received against the Cardholder's outstanding will be adjusted
+against 248% of GST, 643% of EMI amount, 856% of Fees/Charges, 938% of Finance charges, Balance
+transfer, Retail Spends and Cash Advance, in that order.
+**** Utility payments shall be identified under Merchant Category Code (MCC) 2754, on best effort basis.
+The MCCs are defined by the network partners and are subject to change basis their discretion and such
+changes shall be implemented basis communication from the networks without any requirement for
+intimation/information to the customers.
+^ Identified under Merchant Category Code (MCC) 2802, 1516, 4910, 4035, 0855 and 6815, on best effort
+basis.
+^^Third Party Apps like (but not limited to) CRED, Cheq, MobiKwik etc.
+^^^Identified under Merchant Category Code (MCC) 4412 and 0358, on best effort basis.
+The MCCs are defined by the network partners and are subject to change basis their discretion and such
+changes shall be implemented basis communication from the networks without any requirement for
+intimation/information to the customers.
+Payments and Combined Credit Limit:
+If a customer holds multiple SBI Credit Cards, the credit limit may be shared across these cards at the
+customer level, as approved by the SBI Card at its sole discretion and in accordance with its internal
+policies.The combined usage across all SBI Card Credit Cards will be restricted to the shared credit limit
+assigned.Payments against the Monthly Card Statement must be made separately for each card based on
+the amount reflected in the respective statement.
+If one card has a credit balance (excess payment), it will not be set off against the outstanding balance on
+other card(s).Non-payment of the outstanding amount by the payment due date will attract applicable
+charges in accordance with the Most Important Terms and Conditions (MITC).

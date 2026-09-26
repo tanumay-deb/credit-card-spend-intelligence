@@ -1,0 +1,239 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "emitbl049zzzzzzzzzzz",
+  "position": {
+    "x": 280,
+    "y": 180,
+    "z": 49,
+    "height": 420,
+    "width": 1620,
+    "tabOrder": 49
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_card"
+                    }
+                  },
+                  "Property": "card_name"
+                }
+              },
+              "queryRef": "dim_card.card_name",
+              "nativeQueryRef": "card_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "loan_type"
+                }
+              },
+              "queryRef": "fact_emi.loan_type",
+              "nativeQueryRef": "loan_type",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "fact_emi.status",
+              "nativeQueryRef": "status",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "start_date"
+                }
+              },
+              "queryRef": "fact_emi.start_date",
+              "nativeQueryRef": "start_date",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "end_date"
+                }
+              },
+              "queryRef": "fact_emi.end_date",
+              "nativeQueryRef": "end_date",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "principal"
+                }
+              },
+              "queryRef": "fact_emi.principal",
+              "nativeQueryRef": "principal",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "tenure_months"
+                }
+              },
+              "queryRef": "fact_emi.tenure_months",
+              "nativeQueryRef": "tenure_months",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "remaining_months"
+                }
+              },
+              "queryRef": "fact_emi.remaining_months",
+              "nativeQueryRef": "remaining_months",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "interest_rate"
+                }
+              },
+              "queryRef": "fact_emi.interest_rate",
+              "nativeQueryRef": "interest_rate",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "instalment_amount"
+                }
+              },
+              "queryRef": "fact_emi.instalment_amount",
+              "nativeQueryRef": "instalment_amount",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "interest_payable"
+                }
+              },
+              "queryRef": "fact_emi.interest_payable",
+              "nativeQueryRef": "interest_payable",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "outstanding"
+                }
+              },
+              "queryRef": "fact_emi.outstanding",
+              "nativeQueryRef": "outstanding",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Every running EMI plan'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

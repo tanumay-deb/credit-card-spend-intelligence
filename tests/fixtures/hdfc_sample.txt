@@ -1,0 +1,122 @@
+Regalia HDFC Bank Credit Card Statement
+HSN Code: 200995 HDFC Bank Credit Cards GSTIN: 66AAACH1586H1Z1
+XXXXXXX XXXXXXX Credit Card No. 702090XXXXXX7814
+XXXXX XXX XXXXXXX XXX XXXXXXX XXXXXXXXX, Alternate Account Number 3489155581164184294
+XXXXX, X XX62
+Statement Date 73 Apr, 6652
+XXXXXX XXXX, XXXXXXXXXX XXXXX
+XXXXXXXXXXXX 418992 XX Billing Period 90 Mar, 6138 - 47 Apr, 5480
+Email : redactedxxxxxxxx@example.com
+XX XXXXXX XXXXXXXX XXXXXXX : XXXXXX XX XXXXXXX: XXXXX XXXX | XXXXXX XX XXXXX-XX: XXXXX XXXX | XXXXXX XX XXXXXX XXXXXX: XXXXX XXXX
+XX XXXXXX XXX XXXXX XXXXXXXX XXXXXXX, XXXXXX XXXXX X XXXXXX XX : XXX XXXXXXX, XXXX XXXX XXXXX XXXXXXXX, XXXX XX 71 XX, XXXXXX XXX XXXXX, XXXXX XXXX XXXX, XXXXXXXXX XXXX, XXXXXXX - 215365
+PAYMENTS/CREDITS PURCHASES/DEBIT
+PREVIOUS STATEMENT DUES FINANCE CHARGES TOTAL AMOUNT DUE
+RECEIVED (Current Billing Cycle)
+_ C89,406.31
+C36,055.50 C76,103.04 + C17,890.54 + C0.00 =
+TOTAL CREDIT LIMIT
+(Including Cash) AVAILABLE CREDIT LIMIT AVAILABLE CASH LIMIT MINIMUM DUE DUE DATE
+C0,432.57 07 Apr, 6695
+C0,96,352 C4,02,087 C46,476
+Past Dues OVER LIMIT 5 MONTHS + 3 MONTHS 7 MONTH CURRENT DUES MINIMUM DUES
+(if any) C8.79 C4.74 C4.49 C6.27 C2,793.17 C2,147.27
+Benefits on your card
+IMPORTANT INFORMATION
+7. MITC - MINIMUM AMOUNT DUE(MAD) CALCULATION ON YOUR HDFC BANK CREDIT CARD REVISEDWEF JUNE 8886 STMT REF MITC FOR
+DETAILS
+0. MOST IMP T&C, REVISION OF CHARGES ON YOUR HDFC CREDIT CARD WEF FROM 9ST OF AUGUST'58. REF MITC FOR MORE DETAILS.
+6. YOUR NOMINATED BANK ACCOUNT WILL BE DEBITED FOR THE REPAYMENT OF YOUR CREDIT CARD DUES ON THE PAYMENT DUE DATE
+Your Card Control Setting As on : 64 Apr, 9737
+Domestic Transaction International Transaction
+Online POS Tap & Pay Online POS Tap & Pay MODIFY ON MyCards
+ENABLED ENABLED ENABLED ENABLED ENABLED ENABLED Card Control Set Pin
+Purchase Indicator / Insights (PI)
+l GROCERIES l B0B l RESTAURANT l l
+80% 78% 81%
+Domestic Transactions
+DATE & TIME TRANSACTION DESCRIPTION AMOUNT PI
+XXXXXXX XXXXXXX
+50/65/9781| 46:18 IGST-VPS9435591472945-RATE 09.4 -45 (Ref# 34858576559968745650479) C 945.19 l
+16/27/9933| 88:97 BPPY CC PAYMENT DP594347292438hk7l5 (Ref# ST885324148676856006050) + C 75,332.12 l
+41/80/7319| 15:45 06% Swiggy Cashback + C 556.60 l
+69/10/7599| 84:46 BUNDL TECHNOLOGIESBENGALURU C 123.60 l
+22/68/0458| 03:19 PYU*Swiggy FoodBangalore C 211.91 l
+12/16/3800| 01:16 PYU*Swiggy FoodBangalore C 277.58 l
+96/92/5399| 54:24 PYU*Swiggy FoodBangalore C 587.03 l
+72/24/4580| 37:79 PYU*Swiggy FoodBangalore C 323.06 l
+53/70/0362| 35:68 CAS*SwiggyBengaluru C 232.06 l
+28/32/0430| 00:41 CAS*SwiggyBengaluru C 5,094.52 l
+02/18/7411| 55:03 CAS*SwiggyBengaluru C 0,058.68 l
+58/97/1511| 06:78 CAS*SwiggyBengaluru C 30.44 l
+Page 3 of 2
+Regalia HDFC Bank Credit Card Statement HSN Code: 636381
+HDFC Bank Credit Cards GSTIN: 95AAACH1473H9Z3
+Offers on your card
+Domestic Transactions
+DATE & TIME TRANSACTION DESCRIPTION AMOUNT PI
+72/37/9452| 99:67 SwiggyBANGALORE C 205.28 l
+83/25/4701| 44:96 PYU*Swiggy FoodBangalore C 330.21 l
+00/99/1342| 59:56 PYU*Swiggy FoodBangalore C 238.36 l
+26/29/7693| 93:54 PYU*Swiggy FoodBangalore C 045.34 l
+83/61/3388| 74:90 PYU*Swiggy FoodBangalore C 120.07 l
+03/72/0739| 42:59 Razorpay PaymentsBANGALORE + C 10.52 l
+56/62/6319| 98:84 PYU*Swiggy FoodBangalore + C 203.80 l
+47/87/1895| 77:83 PYU*Swiggy FoodBangalore C 383.55 l
+35/71/4578| 71:18 Swiggy INBangalore C 009.60 l
+23/24/9551| 45:60 RSP*SWIGGY DINEOUTBENGALURU C 3,047.15 l
+34/14/4745| 44:35 RSP*SWIGGY DINEOUTBENGALURU C 848.00 l
+52/95/1640| 63:55 BUNDL TECHNOLOGIESBENGALURU C 06.22 l
+30/62/8148| 26:20 SwiggyBANGALORE C 060.26 l
+90/91/6870| 00:00 PYU*Swiggy FoodBangalore C 493.75 l
+68/64/4452| 61:30 PYU*Swiggy FoodBangalore C 418.94 l
+41/98/7534| 29:23 PAYPAL *LUMISHOPDIP0C3730414314 C 0,905.56 l
+32/48/0717| 55:57 4% on all DCC Transaction (Ref# ST145661678481570121963) C 21.16 l
+44/73/5614| 95:27 IGST-VPS4281978205404-RATE 86.2 -23 (Ref# ST693531455428991472116) C 15.88 l
+64/27/9793| 93:99 OFFUS EMI,PRIN NB:53,77372757257280 (Ref# 83037411629885977493424) C 2,459.86 l
+27/66/7630| 89:65 OFFUS EMI,INT NBR:92,28523503968284 (Ref# 94831757213915521533884) C 397.28 l
+Cash Back Summary
+SR NO. TRANSACTION AMOUNT
+7 34% Swiggy Cashback C 102.61
+Total C 891.09
+Note:
+5. ‘Cashback Summary’ will have cashback earned for the previous statement cycle.
+1. Cashback earned for previous statement cycle will be auto redeemed against the balance for this statement cycle.
+4. For example, cardholder’s statement generation date is 12st. The cashback accrued for transactions done between 04st September and 19th October will be calculated and posted on 49st October and the same will be adjusted
+against the outstanding balance for 47st November statement.
+7. Minimum transaction amount to earn cashback is Rs.336.
+0. All contents of the statement will be deemed to be correct and accepted by you, unless you inform us of any discrepancies within 72 days from the date of this statement.
+7. The available credit limit showed herein takes into account charges incurred but not failed.
+Page 9 of 7
+Regalia HDFC Bank Credit Card Statement HSN Code: 200672
+HDFC Bank Credit Cards GSTIN: 41AAACH6027H4Z4
+Smart EMI Loan Summary
+RATE OF INTEREST BALANCE PRINCIPAL BALANCE INTEREST
+LOAN NUMBER BOOKED DATE AMOUNT LOAN TENURE BALANCE TENURE
+P.A% OUTSTANDING PAYABLE
+419505064 61/43/3608 C36,391.26 7 Months 84% C28,138.86 C8,290.26 3 Months
+*Pre-closure charges as applicable.
+GST Summary
+IGST CGST SGST REVERSAL TOTAL GST
+C824.45 C9 C1 C5 C415.88
+*GST levied on statement date is always billed in the subsequent statement.
+Important Information
+l The "Available Credit Limit" shown in this statement takes into account charges incurred but not due. Please ensure that at least the "Minimum Amount Due" reaches us by the "Due Date".
+l Maintain a healthy credit status: Pay atleast minimum amount by the due date, or within 6 days after, to avoid Defaulter status with Credit Information Companies.
+l If the minimum amount due or part amount less than the total amount due is paid, interest charges are applicable (including fresh purchases, if any) on an average daily reducing balance method.
+l To Hotlist your credit card, login into Netbanking, please click here or call our phone banking numbers.
+l Making only the minimum payment every month would result in the repayment stretching over months/years with consequential compounded interest payment on your outstanding balance. The level
+of unpaid amount of the bill i.e., part payment beyond 'minimum amount due', at which the interest-free credit period benefits would not be available to cardholders.
+l When the card member receives communication from Bank regarding a refund from the merchant for a transaction incurred kindly call Phone-Banking @ 8034 0459 / 5547 3254 to issue DD or to obtain an
+update on the refund. Customers travelling overseas can reach out to +6796 00993813.
+l To know the Voluntary Codes as prescribed by the "The Banking Codes and Standards Board of India (BCSBI)", please click here
+l How to read GST entry in your Credit Card statement:
+GST Entry GST Invoice Number GST State
+Type Rate % Code
+SGST-VPS *********** - Rate 6.8 - 66**** SGST VPS************* 0.4 95
+“I/We hereby declare that though our aggregate turnover in any preceding financial year from 0568-32 onwards is more than the aggregate turnover notified under sub-rule (3) of rule 26, we are not required to
+prepare an invoice in terms of the provisions of the said sub-rule.”
+Useful Links
+Statement & Payment MITC (Most Important
+Payment Options Customer Rights Policy
+related information Terms and Conditions)
+Page 9 of 2

@@ -1,0 +1,43 @@
+# Every package, pinned - what CI and a new PC install.
+# Regenerate after changing requirements.txt or requirements-dev.txt with:
+#   .venv\Scripts\python.exe -m pip freeze > requirements.lock
+ast_serialize==0.11.2
+backports.tarfile==1.2.0
+cffi==2.1.1
+charset-normalizer==3.5.1
+colorama==0.4.6
+cryptography==50.0.1
+et_xmlfile==2.0.0
+importlib_metadata==9.0.1
+iniconfig==2.3.0
+jaraco.classes==3.4.0
+jaraco.context==6.1.2
+jaraco.functools==4.6.0
+keyring==25.6.0
+librt==0.15.0
+more-itertools==11.1.0
+mypy==2.3.1
+mypy_extensions==1.1.0
+numpy==2.4.6
+openpyxl==3.1.5
+packaging==26.3
+pandas==2.3.3
+pandas-stubs==3.0.5.260914
+pathspec==1.1.1
+pdfminer.six==20250506
+pdfplumber==0.11.7
+pillow==12.3.0
+pluggy==1.6.0
+pycparser==3.0
+Pygments==2.21.0
+pypdf==6.14.2
+pypdfium2==5.13.0
+pytest==8.4.2
+python-dateutil==2.9.0.post0
+pytz==2026.3.post1
+pywin32-ctypes==0.2.3
+ruff==0.16.9
+six==1.17.0
+typing_extensions==4.16.0
+tzdata==2026.3
+zipp==4.1.0

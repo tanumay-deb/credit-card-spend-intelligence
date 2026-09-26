@@ -1,0 +1,5 @@
+expression ProjectFolder = "C:\Projects\CreditCard" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 62f39b27-ffe1-425c-9649-3fab0a064695
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,80 @@
+table dim_date
+	lineageTag: 88c25bd9-a63e-46b0-8a25-0d93b7626bca
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 101af640-9bac-472c-89a2-863eddbc9ac1
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		lineageTag: 7c23fde1-375f-4cbe-bb72-c9a2e8d90795
+		summarizeBy: none
+		sourceColumn: Year
+		formatString: 0
+
+	column Month
+		dataType: int64
+		lineageTag: 7fab267a-8e1d-4d96-9361-1d2fbfa0afe4
+		summarizeBy: none
+		sourceColumn: Month
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 613e1b63-b7db-4cca-abc8-daada5e42c78
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: 'Month Sort'
+
+	column 'Month Sort'
+		dataType: int64
+		isHidden
+		lineageTag: 9a09296e-e3e2-4b18-b24f-6c358b53052f
+		summarizeBy: none
+		sourceColumn: Month Sort
+
+	column 'Month Short'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Month Short
+		sortByColumn: Month
+
+	column Weekday
+		dataType: string
+		lineageTag: 19701124-e2d3-4242-bb57-c7cf9a89168c
+		summarizeBy: none
+		sourceColumn: Weekday
+
+	column 'Is Weekend'
+		dataType: boolean
+		lineageTag: 47be4b5c-153c-4986-8586-f8eb3122e4dc
+		summarizeBy: none
+		sourceColumn: Is Weekend
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+					AllDates = List.Combine({fact_transactions[txn_date], fact_statements[statement_date], fact_statements[due_date]}),
+					MinDate = List.Min(AllDates),
+					MaxDate = List.Max(AllDates),
+					Start = Date.StartOfMonth(MinDate),
+					Finish = Date.EndOfMonth(MaxDate),
+					Days = Duration.Days(Finish - Start) + 1,
+					Dates = List.Dates(Start, Days, #duration(1,0,0,0)),
+					Tbl = Table.FromList(Dates, Splitter.SplitByNothing(), {"Date"}),
+					Typed = Table.TransformColumnTypes(Tbl, {{"Date", type date}}),
+					A = Table.AddColumn(Typed, "Year", each Date.Year([Date]), Int64.Type),
+					B = Table.AddColumn(A, "Month", each Date.Month([Date]), Int64.Type),
+					C = Table.AddColumn(B, "Month Name", each Date.ToText([Date], "MMM yyyy"), type text),
+					S = Table.AddColumn(C, "Month Sort", each Date.Year([Date]) * 100 + Date.Month([Date]), Int64.Type),
+					MS = Table.AddColumn(S, "Month Short", each Date.ToText([Date], "MMM"), type text),
+					D = Table.AddColumn(MS, "Weekday", each Date.ToText([Date], "ddd"), type text),
+					E = Table.AddColumn(D, "Is Weekend", each Date.DayOfWeek([Date], Day.Monday) >= 5, type logical)
+				in
+					E
+

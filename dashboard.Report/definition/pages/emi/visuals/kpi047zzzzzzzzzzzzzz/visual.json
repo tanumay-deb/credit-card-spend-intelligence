@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "kpi047zzzzzzzzzzzzzz",
+  "position": {
+    "x": 1264,
+    "y": 20,
+    "z": 47,
+    "height": 140,
+    "width": 308,
+    "tabOrder": 47
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_emi"
+                    }
+                  },
+                  "Property": "EMI Months Left"
+                }
+              },
+              "queryRef": "fact_emi.EMI Months Left",
+              "nativeQueryRef": "EMI Months Left",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

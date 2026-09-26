@@ -1,0 +1,31 @@
+category_group,subcategory,is_discretionary,sort_order
+Food,Restaurants,1,10
+Food,Swiggy,1,11
+Food,Zomato,1,12
+Food,Groceries,0,13
+Shopping,Amazon,1,20
+Shopping,Flipkart,1,21
+Shopping,Clothing,1,22
+Shopping,Electronics,1,23
+Travel,Flights,1,30
+Travel,Hotels,1,31
+Travel,Fuel,0,32
+Travel,Cabs,1,33
+Bills,Utilities,0,40
+Bills,Telecom,0,41
+Bills,Insurance,0,42
+Bills,Subscriptions,1,43
+Entertainment,Streaming,1,50
+Entertainment,Events,1,51
+Entertainment,Gaming,1,52
+EMI,EMI,0,60
+Education,Education,0,65
+Health,Health,0,67
+UPI,UPI,1,80
+Others,Uncategorised,1,90
+Others,Cash,0,91
+Others,Misc,1,92
+Others,Fees & Interest,0,93
+Food,Quick Commerce,0,14
+Shopping,Online Shopping,1,24
+Travel,Travel,1,34

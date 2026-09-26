@@ -1,0 +1,52 @@
+# ---- Secrets: never commit ----
+config/secrets.env
+*.env
+!config/secrets.env.example
+
+# ---- Real financial data: never commit ----
+statements/
+*.pdf
+
+# ---- Generated: regenerable from statements/ ----
+output/
+# Made-up data from `cards demo`
+demo/
+
+# ---- Power BI ----
+# .pbix is a binary that embeds a cached copy of your imported transactions.
+# Prefer saving as .pbip (Power BI Project) instead -- it stores the report and
+# model definition as text, with no data, and is safe to version.
+*.pbix
+*.pbix.tmp
+~$*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+
+# ---- Brainstorm session artifacts ----
+.superpowers/
+
+# ---- OS ----
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- Tooling cache ----
+.impeccable/
+
+# Your original statement drop folder
+Statement/
+
+# ---- Power BI project ----
+# .pbi/ holds cache.abf: a compiled binary copy of the imported transactions.
+# The rest of the .pbip is text (TMDL + JSON) and carries no data, so it is
+# committed -- that is the whole reason for using .pbip over .pbix.
+*.SemanticModel/.pbi/
+*.Report/.pbi/
+
+.public-copy

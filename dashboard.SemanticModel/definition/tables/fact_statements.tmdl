@@ -1,0 +1,157 @@
+table fact_statements
+	lineageTag: 2ead3349-a2b1-4509-9746-f2931c06947d
+
+	/// Each card's balance on its latest statement in the selected period -- with no
+	/// month picked, the current bill. Summing every statement in the period counted
+	/// the same debt once a month, so a year of statements read about twelve times
+	/// the balance and utilisation passed 100%. A payment made since that statement
+	/// only shows once the next statement arrives.
+	measure 'Current Outstanding' = SUMX(VALUES(fact_statements[card_id]), VAR latest = CALCULATE(MAX(fact_statements[statement_date])) RETURN CALCULATE(SUM(fact_statements[total_due]), fact_statements[statement_date] = latest))
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 43ea417c-4afd-4828-bad7-1b49fea57fad
+
+	/// Minimum due on each card's latest statement in the selected period, for the
+	/// same reason as Current Outstanding.
+	measure 'Minimum Due' = SUMX(VALUES(fact_statements[card_id]), VAR latest = CALCULATE(MAX(fact_statements[statement_date])) RETURN CALCULATE(SUM(fact_statements[min_due]), fact_statements[statement_date] = latest))
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: f3376ffc-b920-46c2-afec-55cdbf98c85a
+
+	/// Read from dim_card, so it is immune to date filtering. A credit limit is
+	/// not a monthly quantity.
+	measure 'Total Credit Limit' = SUMX(VALUES(dim_card[limit_group]), CALCULATE(MAX(fact_statements[credit_limit])))
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 8eb3432e-1b83-498f-8cf7-ef7266d16321
+
+	/// Headroom left on each credit limit. Cards sharing a limit draw on it together,
+	/// so their headroom is the shared limit less what every card on it owes.
+	measure 'Available Credit' = SUMX(VALUES(dim_card[limit_group]), CALCULATE(MAX(fact_statements[credit_limit])) - CALCULATE([Current Outstanding], ALLEXCEPT(dim_card, dim_card[limit_group])))
+		formatString: \₹#,0;-\₹#,0;\₹#,0
+		lineageTag: 7650e9dd-2747-4cb3-9baf-ca8d26e21fbc
+
+	/// Divides portfolio totals. Averaging per-card ratios answers a different
+	/// question and gives a different number. Cards sharing a limit are measured
+	/// against it together, as the issuer counts their balances jointly.
+	measure 'Utilisation %' = DIVIDE(SUMX(VALUES(dim_card[limit_group]), CALCULATE([Current Outstanding], ALLEXCEPT(dim_card, dim_card[limit_group]))), [Total Credit Limit])
+		formatString: 0.0%
+		lineageTag: 23137314-d30b-4ac2-82f3-e964314fa76b
+
+	column statement_id
+		dataType: string
+		lineageTag: e5404ab4-3658-4226-9db8-ed3f0484d1ba
+		summarizeBy: none
+		sourceColumn: statement_id
+
+	column card_id
+		dataType: string
+		lineageTag: ba5cef04-62c9-41b9-8734-1a746c1eb1ff
+		summarizeBy: none
+		sourceColumn: card_id
+
+	column statement_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 524e7ba7-9b96-4fc3-b88b-c2788ec0b72a
+		summarizeBy: none
+		sourceColumn: statement_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column due_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: befed08b-b97d-4dc9-8eff-f33c1b42db39
+		summarizeBy: none
+		sourceColumn: due_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column purchases
+		dataType: double
+		lineageTag: b73b7092-44c2-49df-889d-a4e3c233b3fc
+		summarizeBy: sum
+		sourceColumn: purchases
+
+	column total_due
+		dataType: double
+		lineageTag: 08d5d9d0-0abb-4d2e-ac15-2e1601bc2dd0
+		summarizeBy: sum
+		sourceColumn: total_due
+
+	column min_due
+		dataType: double
+		lineageTag: d81a054d-e9b2-4c16-b510-038777594b63
+		summarizeBy: sum
+		sourceColumn: min_due
+
+	column finance_charges
+		dataType: double
+		lineageTag: 1038cc68-7eb6-4e53-8de1-67804dc7f52e
+		summarizeBy: sum
+		sourceColumn: finance_charges
+
+	column late_fee
+		dataType: double
+		lineageTag: 89b0a28b-fc0f-4963-9618-5f42b10b8035
+		summarizeBy: sum
+		sourceColumn: late_fee
+
+	column credit_limit
+		dataType: double
+		lineageTag: fe9398b0-8dd6-472c-8bfb-ad3e183afb30
+		summarizeBy: sum
+		sourceColumn: credit_limit
+
+	column available_limit
+		dataType: double
+		lineageTag: 9d6337b8-03ff-4b91-9d01-8d68359271a6
+		summarizeBy: sum
+		sourceColumn: available_limit
+
+	column payments
+		dataType: double
+		lineageTag: ec951853-c79e-4d7f-9288-e0ed714224f6
+		summarizeBy: sum
+		sourceColumn: payments
+
+	column period_start
+		dataType: string
+		lineageTag: 25536dca-405c-45e1-8f3c-b86136ed8c28
+		summarizeBy: none
+		sourceColumn: period_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_end
+		dataType: string
+		lineageTag: ffca757e-b93d-4d37-bdea-5333bb35dc5d
+		summarizeBy: none
+		sourceColumn: period_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous_balance
+		dataType: string
+		lineageTag: 9764ef16-3f6f-4cb6-8d51-8cbaf1752150
+		summarizeBy: none
+		sourceColumn: previous_balance
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_file
+		dataType: string
+		lineageTag: 7641fa23-8f72-4e9c-a019-39c6d3cf0df3
+		summarizeBy: none
+		sourceColumn: source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_statements = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(ProjectFolder & "\output\statements.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"statement_date", type date}, {"due_date", type date}, {"purchases", type number}, {"total_due", type number}, {"min_due", type number}, {"finance_charges", type number}, {"late_fee", type number}, {"credit_limit", type number}, {"available_limit", type number}, {"payments", type number}})
+				in
+					Typed
+

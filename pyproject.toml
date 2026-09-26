@@ -1,0 +1,14 @@
+# Tool settings. Dependencies are pinned in requirements*.txt and requirements.lock.
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["dashboard.Report", "dashboard.SemanticModel"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["creditcard"]
+ignore_missing_imports = true
