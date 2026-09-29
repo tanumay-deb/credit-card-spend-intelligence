@@ -144,9 +144,9 @@ def build(root: Path, today: date | None = None, seed: int = 7) -> Path:
 def _write_config(config: Path) -> None:
     (config / "cards.csv").write_text(
         "card_id,issuer,card_name,last4,parser,password_env,credit_limit,statement_day,"
-        "limit_group,monthly\n"
+        "limit_group,monthly,closed\n"
         + "".join(f"{c.card_id},{c.issuer},{c.name},0000,{c.parser},DEMO_PDF_PASSWORD,"
-                  f"{c.limit},{c.statement_day},{c.limit_group},yes\n" for c in CARDS),
+                  f"{c.limit},{c.statement_day},{c.limit_group},yes,\n" for c in CARDS),
         encoding="utf-8",
     )
     (config / "category_rules.csv").write_text(

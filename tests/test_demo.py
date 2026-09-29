@@ -35,6 +35,7 @@ def test_writes_a_demo_project_with_config_and_outputs(root):
     for name in ("transactions.csv", "statements.csv", "emi_plans.csv", "credit_card_data.xlsx"):
         assert (folder / "output" / name).exists()
     assert len(load_cards(folder / "config" / "cards.csv")) == 4
+    assert "closed" in (folder / "config" / "cards.csv").read_text(encoding="utf-8").splitlines()[0]
     assert len(_rows(folder / "output" / "statements.csv")) == 4 * demo.MONTHS
 
 

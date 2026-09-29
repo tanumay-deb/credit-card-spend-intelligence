@@ -1,8 +1,8 @@
-card_id,issuer,card_name,last4,parser,password_env,credit_limit,statement_day,limit_group,monthly
-hdfc_millennia,HDFC,Millennia,0000,hdfc,HDFC_MILLENNIA_PDF_PASSWORD,0,1,hdfc_millennia,yes
-hdfc_regalia,HDFC,Regalia HDFC,0000,hdfc,HDFC_REGALIA_PDF_PASSWORD,0,1,hdfc_regalia,yes
-icici_coral,ICICI,ICICI Coral,0000,icici,ICICI_PDF_PASSWORD,0,1,icici_pool,yes
-sbi_elite,SBI,SBI Elite,0000,sbi,SBI_ELITE_PDF_PASSWORD,0,1,sbi_pool,yes
-sbi_bpcl,SBI,SBI BPCL,0000,sbi,SBI_BPCL_PDF_PASSWORD,0,1,sbi_pool,yes
-icici_rubyx,ICICI,ICICI Rubyx,0000,icici,ICICI_PDF_PASSWORD,0,1,icici_pool,no
-icici_sapphiro,ICICI,ICICI Sapphiro,0000,icici,ICICI_PDF_PASSWORD,0,1,icici_pool,no
+card_id,issuer,card_name,last4,parser,password_env,credit_limit,statement_day,limit_group,monthly,closed
+hdfc_millennia,HDFC,Millennia,0000,hdfc,HDFC_MILLENNIA_PDF_PASSWORD,0,1,hdfc_millennia,yes,
+hdfc_regalia,HDFC,Regalia HDFC,0000,hdfc,HDFC_REGALIA_PDF_PASSWORD,0,1,hdfc_regalia,yes,
+icici_coral,ICICI,ICICI Coral,0000,icici,ICICI_PDF_PASSWORD,0,1,icici_pool,yes,
+sbi_elite,SBI,SBI Elite,0000,sbi,SBI_ELITE_PDF_PASSWORD,0,1,sbi_pool,yes,
+sbi_bpcl,SBI,SBI BPCL,0000,sbi,SBI_BPCL_PDF_PASSWORD,0,1,sbi_pool,yes,
+icici_rubyx,ICICI,ICICI Rubyx,0000,icici,ICICI_PDF_PASSWORD,0,1,icici_pool,no,yes
+icici_sapphiro,ICICI,ICICI Sapphiro,0000,icici,ICICI_PDF_PASSWORD,0,1,icici_pool,no,yes

@@ -55,6 +55,8 @@ def load_cards(path: Path) -> dict[str, Card]:
                     limit_group=(row.get("limit_group") or "").strip(),
                     monthly=(row.get("monthly") or "yes").strip().lower()
                     not in {"no", "n", "false", "0"},
+                    closed=(row.get("closed") or "").strip().lower()
+                    in {"yes", "y", "true", "1"},
                 )
             except (KeyError, ValueError, InvalidOperation) as exc:
                 raise ValueError(

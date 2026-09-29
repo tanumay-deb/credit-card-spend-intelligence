@@ -61,6 +61,14 @@ table dim_card
 
 		annotation SummarizationSetBy = Automatic
 
+	column closed
+		dataType: string
+		lineageTag: d32b72bd-bccb-4790-9e73-3597ea1af7ce
+		summarizeBy: none
+		sourceColumn: closed
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_card = m
 		mode: import
 		source =

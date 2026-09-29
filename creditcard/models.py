@@ -21,6 +21,9 @@ class Card:
     # False for a card whose issuer sends a statement only in months the
     # card is used, so a month without one is neither missing nor late.
     monthly: bool = True
+    # A card you no longer hold: its statements stay in the history, but it
+    # sends no more, and the dashboard doesn't count it as a card you have.
+    closed: bool = False
 
     @property
     def limit_pool(self) -> str:

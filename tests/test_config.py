@@ -261,3 +261,22 @@ def test_comma_in_merchant_map_is_rejected_not_truncated(tmp_path):
         load_merchant_map(p)
     assert "line 2" in str(exc.value)
     assert "comma" in str(exc.value).lower()
+
+
+def test_closed_defaults_to_no_and_reads_yes(tmp_path):
+    path = tmp_path / "cards.csv"
+    path.write_text(
+        "card_id,issuer,card_name,last4,parser,password_env,credit_limit,statement_day,closed\n"
+        "a,HDFC,A,0000,hdfc,A_PW,0,1,\n"
+        "b,ICICI,B,0000,icici,B_PW,0,1,yes\n",
+        encoding="utf-8",
+    )
+    cards = load_cards(path)
+    assert (cards["a"].closed, cards["b"].closed) == (False, True)
+
+
+def test_the_closed_mmt_cards_are_marked_closed():
+    cards = load_cards(Path("config/cards.csv"))
+    assert cards["icici_rubyx"].closed and cards["icici_sapphiro"].closed
+    assert not any(c.closed for cid, c in cards.items()
+                   if cid not in {"icici_rubyx", "icici_sapphiro"})

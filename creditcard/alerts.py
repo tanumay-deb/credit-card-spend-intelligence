@@ -61,8 +61,10 @@ def items_from_files(root: Path, today: date) -> list[Item]:
     cards = load_cards(root / "config" / "cards.csv")
     names = {card_id: card.card_name for card_id, card in cards.items()}
     password_envs = {card_id: card.password_env for card_id, card in cards.items()}
-    # Billed only in months they are used: a quiet month is neither late nor a gap.
-    not_monthly = {card_id for card_id, card in cards.items() if not card.monthly}
+    # Billed only in months they are used, or closed: a quiet month is neither
+    # late nor a gap.
+    not_monthly = {card_id for card_id, card in cards.items()
+                   if not card.monthly or card.closed}
 
     def name(card_id: str) -> str:
         return names.get(card_id, card_id)

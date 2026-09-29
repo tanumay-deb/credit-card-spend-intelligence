@@ -61,3 +61,16 @@ def test_can_point_the_parameter_at_another_folder(tmp_path):
     target = tmp_path / "demo"
     assert set_project_folder(tmp_path, running=_not_running, folder=target) is True
     assert LINE.format(target.resolve()) in path.read_text(encoding="utf-8")
+
+
+def test_number_of_cards_counts_only_open_cards():
+    """Closed cards still own history, but aren't cards you hold."""
+    from pathlib import Path
+
+    root = Path(powerbi.__file__).resolve().parent.parent
+    tables = root / "dashboard.SemanticModel" / "definition" / "tables"
+    assert "column closed" in (tables / "dim_card.tmdl").read_text(encoding="utf-8")
+    model = (tables / "fact_transactions.tmdl").read_text(encoding="utf-8")
+    measure = next(line for line in model.splitlines()
+                   if "measure 'Number of Cards'" in line)
+    assert 'dim_card[closed] <> "yes"' in measure

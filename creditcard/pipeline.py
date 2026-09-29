@@ -118,7 +118,7 @@ def run(root: Path) -> dict:
     emi_plans = latest_emi_snapshots(emi_plans, statements)
     review = build_review_queue(transactions)
     gaps = find_missing_cycles(
-        statements, skip={c.card_id for c in cards.values() if not c.monthly}
+        statements, skip={c.card_id for c in cards.values() if not c.monthly or c.closed}
     )
     payment_mismatches = check_payments(statements, payments)
 

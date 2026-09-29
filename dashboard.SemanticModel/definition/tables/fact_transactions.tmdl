@@ -29,7 +29,7 @@ table fact_transactions
 		formatString: \₹#,0;-\₹#,0;\₹#,0
 		lineageTag: e74bc52b-0f5f-4dbd-a008-6c6379310399
 
-	measure 'Number of Cards' = DISTINCTCOUNT(fact_transactions[card_id])
+	measure 'Number of Cards' = CALCULATE(DISTINCTCOUNT(fact_transactions[card_id]), dim_card[closed] <> "yes")
 		formatString: #,0
 		lineageTag: 79191b23-0716-4c28-afc1-d538664b0300
 

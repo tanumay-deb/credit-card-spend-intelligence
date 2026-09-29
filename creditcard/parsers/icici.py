@@ -24,8 +24,10 @@ The rupee glyph extracts as a backtick here, not as the ``C`` that HDFC
 produces.
 """
 import re
+from datetime import date, timedelta
 from decimal import Decimal
 
+from creditcard.emi import add_months
 from creditcard.models import (
     Card,
     EmiPlan,
@@ -62,6 +64,11 @@ def _doubled(label: str) -> re.Pattern[str]:
 
 _STATEMENT_DATE_RE = _doubled("STATEMENT DATE")
 _DUE_DATE_RE = _doubled("PAYMENT DUE DATE")
+_PERIOD_RE = re.compile(
+    r"Statement\s+period\s*:\s*([A-Za-z]+\s+\d{1,2},?\s*\d{4})\s+to\s+"
+    r"([A-Za-z]+\s+\d{1,2},?\s*\d{4})",
+    re.IGNORECASE,
+)
 
 
 def _date_after(text: str, pattern: re.Pattern[str], what: str):
@@ -105,10 +112,27 @@ def _amount_after_label(text: str, label: str, what: str) -> Decimal:
     return to_decimal(m.group(1))
 
 
+def _month_first(value: str) -> date:
+    m = DATE_MONTH_FIRST_RE.search(value)
+    if m is None:
+        raise ValueError(f"icici parser: unreadable date {value!r}")
+    mon, day, year = m.groups()
+    return safe_date(int(year), month_num(mon), int(day))
+
+
+def _printed_period(text: str) -> tuple[date, date] | None:
+    m = _PERIOD_RE.search(text)
+    return (_month_first(m.group(1)), _month_first(m.group(2))) if m else None
+
+
 def _parse_summary(text: str, card: Card, source_file: str,
-                   period: tuple) -> StatementSummary:
+                   period: tuple | None) -> StatementSummary:
     statement_date = _date_after(text, _STATEMENT_DATE_RE, "statement date")
     due_date = _date_after(text, _DUE_DATE_RE, "payment due date")
+    if period is None:
+        # Neither printed nor any rows to take it from - a closed card's last
+        # statement can have neither - so it covers the month before its date.
+        period = (add_months(statement_date, -1) + timedelta(days=1), statement_date)
 
     # previous balance, purchases/charges, cash advances, payments/credits
     totals = _amounts_after(text, _TOTALS_LABEL, "spends summary")
@@ -238,12 +262,10 @@ class IciciParser:
             safe_date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
             for m in _TXN_RE.finditer(text)
         ]
-        # ICICI does not print a billing period, so it is taken from the rows.
-        period = (min(dates), max(dates)) if dates else None
-        statement = _parse_summary(
-            text, card, source_file,
-            period or (safe_date(1970, 1, 1), safe_date(1970, 1, 1)),
-        )
+        # ICICI prints "Statement period : <date> to <date>". Without it, the
+        # period is taken from the rows, which only approximates it.
+        period = _printed_period(text) or ((min(dates), max(dates)) if dates else None)
+        statement = _parse_summary(text, card, source_file, period)
         return ParseResult(
             statement=statement,
             transactions=_parse_transactions(

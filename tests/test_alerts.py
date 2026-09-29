@@ -303,3 +303,14 @@ def test_each_problem_says_how_to_fix_it(tmp_path):
     assert "config/cards.csv" in items["unmatched:u.pdf"].text
     assert "monthly=no" in items["late:c1:2026-09"].text
     assert "statements/c1/" in items["gap:c1:2026-07"].text
+
+
+def test_a_closed_card_gets_no_late_or_gap_notes(tmp_path):
+    """A closed card sends no more statements; none is late or missing."""
+    _seed(tmp_path, statements=[_stmt("c1", "2026-06-18"), _stmt("c1", "2026-08-18")])
+    cards = tmp_path / "config" / "cards.csv"
+    cards.write_text(CARDS.replace("statement_day\n", "statement_day,closed\n")
+                     .replace("C1_PW,0,1\n", "C1_PW,0,1,yes\n")
+                     .replace("C2_PW,0,1\n", "C2_PW,0,1,\n"), encoding="utf-8")
+    keys = _by_key(items_from_files(tmp_path, date(2026, 12, 1)))
+    assert not any(k.startswith(("late:c1", "gap:c1")) for k in keys)

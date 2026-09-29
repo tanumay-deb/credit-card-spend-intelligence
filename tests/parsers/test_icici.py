@@ -119,3 +119,32 @@ def test_emi_outstanding_comes_before_the_monthly_instalment():
     )
     assert plan.outstanding == Decimal("8480.00")
     assert plan.instalment_amount == Decimal("2130.00")
+
+
+def test_the_printed_statement_period_is_used():
+    """ICICI prints "Statement period : <date> to <date>"; the row dates only
+    approximate it."""
+    import re
+
+    # The fixture's own dates are scrambled by redaction; put in a known one.
+    text = re.sub(r"Statement period : .*? to \w+ \d+, \d+",
+                  "Statement period : October 4, 2025 to February 3, 2026",
+                  FIXTURE.read_text(encoding="utf-8"), count=1)
+    statement = icici_parser.parse(text, CARD, str(FIXTURE)).statement
+    assert (statement.period_start, statement.period_end) == (date(2025, 10, 4), date(2026, 2, 3))
+
+
+def test_with_no_rows_and_no_printed_period_it_covers_the_month_before():
+    """A closed card's last statement can have neither; it used to get 1970."""
+    from datetime import timedelta
+
+    from creditcard.emi import add_months
+    from creditcard.parsers.icici import _TXN_RE
+
+    text = "\n".join(
+        line for line in FIXTURE.read_text(encoding="utf-8").splitlines()
+        if "Statement period" not in line and not _TXN_RE.search(line)
+    )
+    statement = icici_parser.parse(text, CARD, str(FIXTURE)).statement
+    assert statement.period_end == statement.statement_date
+    assert statement.period_start == add_months(statement.statement_date, -1) + timedelta(days=1)
