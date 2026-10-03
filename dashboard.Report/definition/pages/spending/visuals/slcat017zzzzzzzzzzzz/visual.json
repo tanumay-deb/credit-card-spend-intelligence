@@ -49,6 +49,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Category",
+      "fieldChanges": true,
+      "filterChanges": true
     }
   }
 }

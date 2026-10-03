@@ -49,6 +49,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Card",
+      "fieldChanges": true,
+      "filterChanges": true
     }
   },
   "filterConfig": {

@@ -152,6 +152,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_transactions"
+                  }
+                },
+                "Property": "txn_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true,

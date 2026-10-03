@@ -92,6 +92,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_statements"
+                  }
+                },
+                "Property": "statement_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true,

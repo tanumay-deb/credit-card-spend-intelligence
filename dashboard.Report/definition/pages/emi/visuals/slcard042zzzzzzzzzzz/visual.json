@@ -54,7 +54,12 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "syncGroup": {
+      "groupName": "Card",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
   },
   "filterConfig": {
     "filters": [
