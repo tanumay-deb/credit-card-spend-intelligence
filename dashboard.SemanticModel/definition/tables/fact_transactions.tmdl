@@ -172,16 +172,35 @@ table fact_transactions
 
 		annotation SummarizationSetBy = Automatic
 
+	column statement_date
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: statement_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// First day of the month the statement was issued: the key to dim_statement_month.
+	column statement_month
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: statement_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition fact_transactions = m
 		mode: import
 		source =
 				let
 					Source = Csv.Document(File.Contents(ProjectFolder & "\output\transactions.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-					Blanked = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"spend_amount"}),
-					Typed = Table.TransformColumnTypes(Blanked, {{"txn_date", type date}, {"amount", type number}, {"spend_amount", type number}})
+					Blanked = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"spend_amount", "statement_date"}),
+					Typed = Table.TransformColumnTypes(Blanked, {{"txn_date", type date}, {"amount", type number}, {"spend_amount", type number}, {"statement_date", type date}}),
+					Billed = Table.AddColumn(Typed, "statement_month", each Date.StartOfMonth([statement_date]), type date)
 				in
-					Typed
+					Billed
 
 	annotation PBI_ResultType = Table
 

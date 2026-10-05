@@ -1,0 +1,38 @@
+/// One row per month in which a statement was issued. Both fact tables key to
+/// it, so one slicer filters the bills and the purchases billed on them. The
+/// date table can't: a statement runs across two calendar months.
+table dim_statement_month
+
+	column statement_month
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: statement_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Statement Month'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Statement Month
+		sortByColumn: 'Statement Sort'
+
+	column 'Statement Sort'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Statement Sort
+
+	partition dim_statement_month = m
+		mode: import
+		source =
+				let
+					Months = List.Sort(List.Distinct(List.RemoveNulls(fact_statements[statement_month]))),
+					Tbl = Table.FromList(Months, Splitter.SplitByNothing(), {"statement_month"}),
+					Typed = Table.TransformColumnTypes(Tbl, {{"statement_month", type date}}),
+					Named = Table.AddColumn(Typed, "Statement Month", each Date.ToText([statement_month], "MMM yyyy"), type text),
+					Sorted = Table.AddColumn(Named, "Statement Sort", each Date.Year([statement_month]) * 100 + Date.Month([statement_month]), Int64.Type)
+				in
+					Sorted
+

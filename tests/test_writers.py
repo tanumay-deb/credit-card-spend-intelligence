@@ -31,6 +31,18 @@ def _txn(txn_id="a1", posting_date=date(2026, 8, 4)):
     )
 
 
+def _stmt(statement_id="s1"):
+    return StatementSummary(
+        statement_id=statement_id, card_id="c1", statement_date=date(2026, 8, 18),
+        due_date=date(2026, 9, 7), period_start=date(2026, 7, 19),
+        period_end=date(2026, 8, 18), previous_balance=Decimal("0"),
+        payments=Decimal("0"), purchases=Decimal("1000"), total_due=Decimal("1000"),
+        min_due=Decimal("50"), finance_charges=Decimal("0"), late_fee=Decimal("0"),
+        credit_limit=Decimal("100000"), available_limit=Decimal("99000"),
+        source_file="f.pdf",
+    )
+
+
 def _read(path):
     with open(path, newline="", encoding="utf-8-sig") as fh:
         return list(csv.DictReader(fh))
@@ -61,12 +73,28 @@ def test_none_posting_date_writes_empty_not_the_word_none(tmp_path):
 
 
 def test_column_order_matches_the_dataclass(tmp_path):
-    """Power BI binds by position as well as name; order must be stable."""
+    """Power BI binds by position as well as name; order must be stable. The
+    statement date is looked up when writing, so it comes after the fields."""
     from dataclasses import fields
     out = tmp_path / "t.csv"
     write_transactions([_txn()], out)
     header = out.read_text(encoding="utf-8-sig").splitlines()[0].split(",")
-    assert header == [f.name for f in fields(Transaction)]
+    assert header == [f.name for f in fields(Transaction)] + ["statement_date"]
+
+
+def test_transactions_csv_carries_the_date_of_the_statement_that_billed_it(tmp_path):
+    """The dashboard filters purchases by bill as well as by purchase date, and
+    the purchase date can't say which bill: a late September purchase is on the
+    October statement."""
+    out = tmp_path / "transactions.csv"
+    write_transactions([_txn()], out, statements=[_stmt()])
+    assert _read(out)[0]["statement_date"] == "2026-08-18"
+
+
+def test_a_transaction_whose_statement_is_missing_gets_no_statement_date(tmp_path):
+    out = tmp_path / "transactions.csv"
+    write_transactions([_txn()], out, statements=[_stmt("another")])
+    assert _read(out)[0]["statement_date"] == ""
 
 
 def test_creates_missing_parent_directory(tmp_path):
@@ -84,17 +112,8 @@ def test_utf8_merchant_name_survives_round_trip(tmp_path):
 
 
 def test_write_statements(tmp_path):
-    stmt = StatementSummary(
-        statement_id="s1", card_id="c1", statement_date=date(2026, 8, 18),
-        due_date=date(2026, 9, 7), period_start=date(2026, 7, 19),
-        period_end=date(2026, 8, 18), previous_balance=Decimal("0"),
-        payments=Decimal("0"), purchases=Decimal("1000"), total_due=Decimal("1000"),
-        min_due=Decimal("50"), finance_charges=Decimal("0"), late_fee=Decimal("0"),
-        credit_limit=Decimal("100000"), available_limit=Decimal("99000"),
-        source_file="f.pdf",
-    )
     out = tmp_path / "statements.csv"
-    write_statements([stmt], out)
+    write_statements([_stmt()], out)
     assert _read(out)[0]["total_due"] == "1000"
 
 
@@ -173,7 +192,6 @@ def test_transactions_csv_carries_spend_amount(tmp_path):
     from dataclasses import replace
     out = tmp_path / "transactions.csv"
     write_transactions([replace(_txn(), spend_amount=Decimal("482.50"))], out)
-    assert out.read_text(encoding="utf-8-sig").splitlines()[0].split(",")[-1] == "spend_amount"
     assert _read(out)[0]["spend_amount"] == "482.50"
 
 
@@ -205,6 +223,16 @@ def test_write_outputs_writes_every_file_and_leaves_no_temporaries(tmp_path):
     assert result == {"excel_file": tmp_path / "credit_card_data.xlsx",
                       "workbook_skipped": False}
     assert not list(tmp_path.glob("*.tmp.*"))
+
+
+def test_write_outputs_puts_the_statement_date_in_the_csv_and_the_workbook(tmp_path):
+    import openpyxl
+
+    _outputs(tmp_path, statements=[_stmt()])
+    assert _read(tmp_path / "transactions.csv")[0]["statement_date"] == "2026-08-18"
+    sheet = openpyxl.load_workbook(tmp_path / "credit_card_data.xlsx")["Transactions"]
+    header = [cell.value for cell in sheet[1]]
+    assert sheet.cell(row=2, column=header.index("statement_date") + 1).value == "2026-08-18"
 
 
 def test_a_locked_csv_replaces_nothing(tmp_path, monkeypatch):

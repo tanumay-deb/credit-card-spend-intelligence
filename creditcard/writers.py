@@ -8,6 +8,7 @@ encoding.
 """
 import csv
 import os
+from collections.abc import Iterable
 from dataclasses import fields
 from datetime import date
 from decimal import Decimal
@@ -23,7 +24,9 @@ from creditcard.models import (
 
 ENCODING = "utf-8-sig"
 
-TRANSACTION_COLUMNS = [f.name for f in fields(Transaction)]
+# statement_date is looked up from the statements when writing: the dashboard
+# filters purchases by the bill they are on, which a purchase date can't tell.
+TRANSACTION_COLUMNS = [f.name for f in fields(Transaction)] + ["statement_date"]
 STATEMENT_COLUMNS = [f.name for f in fields(StatementSummary)]
 INGEST_LOG_COLUMNS = [f.name for f in fields(IngestLogRow)]
 EMI_COLUMNS = [f.name for f in fields(EmiPlan)]
@@ -77,8 +80,17 @@ def _as_dict(obj) -> dict:
     return {f.name: getattr(obj, f.name) for f in fields(obj)}
 
 
-def write_transactions(transactions: list[Transaction], path: Path) -> None:
-    _write([_as_dict(t) for t in transactions], TRANSACTION_COLUMNS, path)
+def _transaction_rows(
+    transactions: list[Transaction], statements: Iterable[StatementSummary]
+) -> list[dict]:
+    billed = {s.statement_id: s.statement_date for s in statements}
+    return [{**_as_dict(t), "statement_date": billed.get(t.statement_id)} for t in transactions]
+
+
+def write_transactions(
+    transactions: list[Transaction], path: Path, statements: Iterable[StatementSummary] = ()
+) -> None:
+    _write(_transaction_rows(transactions, statements), TRANSACTION_COLUMNS, path)
 
 
 def write_statements(statements: list[StatementSummary], path: Path) -> None:
@@ -138,7 +150,7 @@ def write_excel_workbook(
         from openpyxl.styles import Font, PatternFill
 
         sheets = {
-            "Transactions": ([_as_dict(t) for t in transactions], TRANSACTION_COLUMNS),
+            "Transactions": (_transaction_rows(transactions, statements), TRANSACTION_COLUMNS),
             "Statements": ([_as_dict(s) for s in statements], STATEMENT_COLUMNS),
             "EMI_Plans": ([_as_dict(p) for p in emi_plans], EMI_COLUMNS),
             "Payments": ([_as_dict(p) for p in payments], PAYMENT_COLUMNS),
@@ -201,7 +213,7 @@ def write_outputs(
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     csv_writers = {
-        "transactions.csv": lambda p: write_transactions(transactions, p),
+        "transactions.csv": lambda p: write_transactions(transactions, p, statements),
         "statements.csv": lambda p: write_statements(statements, p),
         "review_queue.csv": lambda p: write_review_queue(review, p),
         "ingest_log.csv": lambda p: write_ingest_log(ingest_log, p),

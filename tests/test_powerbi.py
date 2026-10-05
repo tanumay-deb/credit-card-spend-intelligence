@@ -63,6 +63,33 @@ def test_can_point_the_parameter_at_another_folder(tmp_path):
     assert LINE.format(target.resolve()) in path.read_text(encoding="utf-8")
 
 
+def _model(name: str) -> str:
+    from pathlib import Path
+
+    root = Path(powerbi.__file__).resolve().parent.parent
+    path = root / "dashboard.SemanticModel" / "definition" / name
+    return path.read_text(encoding="utf-8").replace("\r\n", "\n")
+
+
+def test_one_statement_month_table_filters_the_bills_and_their_purchases():
+    """A statement runs across two calendar months, so the date table can't
+    pick out one bill's purchases. Both fact tables key to the month their
+    statement was issued, and one slicer on that table filters them together."""
+    relationships = _model("relationships.tmdl")
+    for table in ("fact_transactions", "fact_statements"):
+        assert (f"\tfromColumn: {table}.statement_month\n"
+                "\ttoColumn: dim_statement_month.statement_month\n") in relationships
+        assert "\tcolumn statement_month\n" in _model(f"tables/{table}.tmdl")
+    assert "ref table dim_statement_month\n" in _model("model.tmdl")
+
+
+def test_statement_months_sort_by_date_not_by_name():
+    """Sorted as text, 'Apr 2026' would come before 'Jan 2026'."""
+    table = _model("tables/dim_statement_month.tmdl")
+    label = table.split("\tcolumn 'Statement Month'\n")[1].split("\n\n")[0]
+    assert "sortByColumn: 'Statement Sort'" in label
+
+
 def test_number_of_cards_counts_only_open_cards():
     """Closed cards still own history, but aren't cards you hold."""
     from pathlib import Path

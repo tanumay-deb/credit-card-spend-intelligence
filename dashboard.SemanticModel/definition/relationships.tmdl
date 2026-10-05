@@ -37,3 +37,11 @@ relationship AutoDetected_bb48f0a5-69e2-4406-90f5-42f1e5feef5d
 	fromColumn: fact_emi.source_file
 	toColumn: fact_statements.source_file
 
+relationship txn_stmt_month_rel
+	fromColumn: fact_transactions.statement_month
+	toColumn: dim_statement_month.statement_month
+
+relationship stmt_month_rel
+	fromColumn: fact_statements.statement_month
+	toColumn: dim_statement_month.statement_month
+

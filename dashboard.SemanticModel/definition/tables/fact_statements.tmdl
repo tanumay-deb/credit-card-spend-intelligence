@@ -145,13 +145,24 @@ table fact_statements
 
 		annotation SummarizationSetBy = Automatic
 
+	/// First day of the month the statement was issued: the key to dim_statement_month.
+	column statement_month
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: statement_month
+
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition fact_statements = m
 		mode: import
 		source =
 				let
 					Source = Csv.Document(File.Contents(ProjectFolder & "\output\statements.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-					Typed = Table.TransformColumnTypes(Promoted, {{"statement_date", type date}, {"due_date", type date}, {"purchases", type number}, {"total_due", type number}, {"min_due", type number}, {"finance_charges", type number}, {"late_fee", type number}, {"credit_limit", type number}, {"available_limit", type number}, {"payments", type number}})
+					Typed = Table.TransformColumnTypes(Promoted, {{"statement_date", type date}, {"due_date", type date}, {"purchases", type number}, {"total_due", type number}, {"min_due", type number}, {"finance_charges", type number}, {"late_fee", type number}, {"credit_limit", type number}, {"available_limit", type number}, {"payments", type number}}),
+					Billed = Table.AddColumn(Typed, "statement_month", each Date.StartOfMonth([statement_date]), type date)
 				in
-					Typed
+					Billed
 

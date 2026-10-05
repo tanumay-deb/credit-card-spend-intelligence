@@ -1,5 +1,6 @@
 """The dashboard's report pages, checked as the files Power BI opens."""
 import json
+from itertools import pairwise
 from pathlib import Path
 
 import pytest
@@ -8,6 +9,7 @@ PAGES = Path(__file__).resolve().parent.parent / "dashboard.Report" / "definitio
 PAGE_ORDER = json.loads((PAGES / "pages.json").read_text(encoding="utf-8-sig"))["pageOrder"]
 
 SLICERS = {
+    "statement": ("dim_statement_month[Statement Month]",),
     "month": ("dim_date[Year]", "dim_date[Month Short]"),
     "card": ("dim_card[card_name]",),
     "category": ("dim_category[category_group]",),
@@ -15,11 +17,15 @@ SLICERS = {
 DATES = {"fact_statements[statement_date]", "fact_transactions[txn_date]"}
 
 
-def _visuals(page: str) -> list[dict]:
+def _containers(page: str) -> list[dict]:
     return [
-        json.loads(path.read_text(encoding="utf-8-sig"))["visual"]
+        json.loads(path.read_text(encoding="utf-8-sig"))
         for path in sorted((PAGES / page / "visuals").glob("*/visual.json"))
     ]
+
+
+def _visuals(page: str) -> list[dict]:
+    return [container["visual"] for container in _containers(page)]
 
 
 def _name(field: dict) -> str:
@@ -31,10 +37,15 @@ def _fields(visual: dict) -> tuple[str, ...]:
     return tuple(_name(p["field"]) for p in visual["query"]["queryState"]["Values"]["projections"])
 
 
-def _sync_group(page: str, fields: tuple[str, ...]) -> dict:
+def _order(visual: dict) -> list[tuple[str, str]]:
+    sort = visual["query"].get("sortDefinition", {}).get("sort", [])
+    return [(_name(by["field"]), by["direction"]) for by in sort]
+
+
+def _slicer(page: str, fields: tuple[str, ...]) -> dict:
     for visual in _visuals(page):
         if visual["visualType"] == "slicer" and _fields(visual) == fields:
-            return visual.get("syncGroup", {})
+            return visual
     raise AssertionError(f"{page} has no slicer on {fields}")
 
 
@@ -42,7 +53,7 @@ def _sync_group(page: str, fields: tuple[str, ...]) -> dict:
 def test_a_slicer_choice_carries_to_every_page(fields):
     """Every page has its own copy of each slicer. Left unsynced, a month
     picked on one page is forgotten on the next."""
-    groups = {page: _sync_group(page, fields) for page in PAGE_ORDER}
+    groups = {page: _slicer(page, fields).get("syncGroup", {}) for page in PAGE_ORDER}
     for page, group in groups.items():
         assert group.get("filterChanges") is True, page
         assert group.get("fieldChanges") is True, page
@@ -51,9 +62,31 @@ def test_a_slicer_choice_carries_to_every_page(fields):
 
 def test_slicers_on_different_fields_stay_independent():
     """A group name shared by two fields would tie the month to the card."""
-    names = [_sync_group(PAGE_ORDER[0], fields).get("groupName") for fields in SLICERS.values()]
+    names = [
+        _slicer(PAGE_ORDER[0], fields).get("syncGroup", {}).get("groupName")
+        for fields in SLICERS.values()
+    ]
     assert None not in names
     assert len(set(names)) == len(names)
+
+
+def test_the_statement_month_slicer_lists_the_latest_month_first():
+    """The statement that just arrived is the one being looked for."""
+    for page in PAGE_ORDER:
+        slicer = _slicer(page, SLICERS["statement"])
+        assert _order(slicer) == [(SLICERS["statement"][0], "Descending")], page
+
+
+def test_slicers_share_the_left_column_without_overlapping():
+    for page in PAGE_ORDER:
+        column = sorted(
+            (c["position"]["y"], c["position"]["y"] + c["position"]["height"])
+            for c in _containers(page) if c["visual"]["visualType"] == "slicer"
+        )
+        assert len(column) == len(SLICERS), page
+        for (_, bottom), (top, _) in pairwise(column):
+            assert bottom <= top, page
+        assert column[-1][1] <= 1080, page
 
 
 def test_tables_that_lead_with_a_date_list_the_newest_first():
@@ -67,6 +100,4 @@ def test_tables_that_lead_with_a_date_list_the_newest_first():
     ]
     assert len(dated) == 3
     for page, visual in dated:
-        sort = visual["query"].get("sortDefinition", {}).get("sort", [])
-        order = [(_name(by["field"]), by["direction"]) for by in sort]
-        assert order == [(_fields(visual)[0], "Descending")], page
+        assert _order(visual) == [(_fields(visual)[0], "Descending")], page

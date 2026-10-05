@@ -11,13 +11,14 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["fact_transactions","fact_statements","dim_card","dim_category","dim_date","fact_emi"]
+annotation PBI_QueryOrder = ["fact_transactions","fact_statements","dim_card","dim_category","dim_date","dim_statement_month","fact_emi"]
 
 ref table fact_transactions
 ref table fact_statements
 ref table dim_card
 ref table dim_category
 ref table dim_date
+ref table dim_statement_month
 ref table fact_emi
 
 ref cultureInfo en-US

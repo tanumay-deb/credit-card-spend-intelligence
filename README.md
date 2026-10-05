@@ -11,7 +11,7 @@ dashboard current. Each day it sends one alert email, and no step is manual.
 [![CI](https://github.com/tanumay-deb/credit-card-spend-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/tanumay-deb/credit-card-spend-intelligence/actions/workflows/ci.yml)
 ![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-DAX%20%C2%B7%20TMDL-F2C811?logo=powerbi&logoColor=black)
-![Tests](https://img.shields.io/badge/tests-369%20passing-2ea44f)
+![Tests](https://img.shields.io/badge/tests-389%20passing-2ea44f)
 ![ruff](https://img.shields.io/badge/lint-ruff-261230)
 ![mypy](https://img.shields.io/badge/types-mypy-1f5082)
 ![Windows](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
@@ -81,6 +81,11 @@ Power BI or the notification centre.
 | **Cards & Bills** | What is owed on each card right now? It shows the minimum due, the available credit (the two SBI cards share one limit, and so do the three ICICI cards), and utilisation. |
 | **EMI** | Which loans are running, with months left and principal versus interest still to pay. |
 | **Transactions** | Every transaction, filtered by year and month, with refunds and credits highlighted. |
+
+Four filters sit down the left of every page: statement month, calendar month, card and
+category. A choice made on one page carries to the others. **Statement month** groups
+purchases by the bill they landed on, not the day they were made, because a statement
+runs across two calendar months.
 
 | Spending Analysis | Cards & Bills |
 |---|---|
@@ -162,7 +167,7 @@ Needs attention
 | Automation | Windows Task Scheduler, PowerShell 5.1, UI Automation, WinRT notifications |
 | Email | IMAP (fetch), SMTP (alerts) |
 | Security | `keyring` with Windows Credential Manager, a pre-commit guard |
-| Quality | pytest (369 tests), ruff, mypy, pinned lockfile, GitHub Actions on Windows |
+| Quality | pytest (389 tests), ruff, mypy, pinned lockfile, GitHub Actions on Windows |
 
 ## By the numbers
 
@@ -213,7 +218,7 @@ creditcard/            the Python package
 dashboard.pbip         the Power BI report and model, as text (TMDL + PBIR)
 config/                your cards, categories and rules (hand-edited CSV)
 tools/                 PowerShell: install, refresh, open; the secret guard
-tests/                 369 tests; bank fixtures are redacted statement text
+tests/                 389 tests; bank fixtures are redacted statement text
 docs/                  usage guide, design specs and plans
 ```
 
